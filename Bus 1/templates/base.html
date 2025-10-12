@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bus Booking System{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#8b5cf6',
+                        accent: '#ec4899',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="{{ url_for('index') }}" class="flex items-center space-x-2">
+                        <i class="fas fa-bus text-3xl text-primary"></i>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                            BusHub
+                        </span>
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    {% if session.get('client_id') %}
+                        <a href="{{ url_for('dashboard') }}" class="text-gray-700 hover:text-primary transition px-3 py-2 rounded-md">
+                            <i class="fas fa-tachometer-alt mr-1"></i> Dashboard
+                        </a>
+                        <a href="{{ url_for('book') }}" class="text-gray-700 hover:text-primary transition px-3 py-2 rounded-md">
+                            <i class="fas fa-ticket-alt mr-1"></i> Book
+                        </a>
+                        <a href="{{ url_for('my_bookings') }}" class="text-gray-700 hover:text-primary transition px-3 py-2 rounded-md">
+                            <i class="fas fa-list mr-1"></i> My Bookings
+                        </a>
+                        <div class="border-l border-gray-300 h-8"></div>
+                        <span class="text-sm text-gray-600">
+                            <i class="fas fa-user-circle"></i> {{ session.get('client_id') }}
+                        </span>
+                        <a href="{{ url_for('logout') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+                            <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                        </a>
+                    {% elif session.get('admin_user') %}
+                        <a href="{{ url_for('admin_dashboard') }}" class="text-gray-700 hover:text-primary transition px-3 py-2 rounded-md">
+                            <i class="fas fa-chart-line mr-1"></i> Dashboard
+                        </a>
+                        <a href="{{ url_for('admin_buses') }}" class="text-gray-700 hover:text-primary transition px-3 py-2 rounded-md">
+                            <i class="fas fa-bus mr-1"></i> Buses
+                        </a>
+                        <a href="{{ url_for('admin_bookings') }}" class="text-gray-700 hover:text-primary transition px-3 py-2 rounded-md">
+                            <i class="fas fa-ticket-alt mr-1"></i> Bookings
+                        </a>
+                        <a href="{{ url_for('admin_analytics') }}" class="text-gray-700 hover:text-primary transition px-3 py-2 rounded-md">
+                            <i class="fas fa-chart-bar mr-1"></i> Analytics
+                        </a>
+                        <div class="border-l border-gray-300 h-8"></div>
+                        <span class="text-sm text-gray-600">
+                            <i class="fas fa-user-shield"></i> {{ session.get('admin_user') }}
+                        </span>
+                        <a href="{{ url_for('admin_logout') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+                            <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('login') }}" class="text-gray-700 hover:text-primary transition px-3 py-2 rounded-md">
+                            <i class="fas fa-sign-in-alt mr-1"></i> Login
+                        </a>
+                        <a href="{{ url_for('admin_login') }}" class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg hover:shadow-lg transition">
+                            <i class="fas fa-user-shield mr-1"></i> Admin
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="fixed top-20 right-4 z-50 space-y-2" id="flash-container">
+                {% for category, message in messages %}
+                    <div class="bg-white border-l-4 {% if category == 'error' %}border-red-500{% else %}border-green-500{% endif %} p-4 rounded-lg shadow-lg animate-slide-up">
+                        <div class="flex items-center">
+                            <i class="fas {% if category == 'error' %}fa-exclamation-circle text-red-500{% else %}fa-check-circle text-green-500{% endif %} mr-2"></i>
+                            <p class="text-gray-800">{{ message }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">BusHub</h3>
+                    <p class="text-gray-400">Modern bus booking system with real-time seat availability and smart auto-scaling.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="{{ url_for('index') }}" class="hover:text-white transition">Home</a></li>
+                        <li><a href="{{ url_for('login') }}" class="hover:text-white transition">Book Now</a></li>
+                        <li><a href="{{ url_for('admin_login') }}" class="hover:text-white transition">Admin Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> support@bushub.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +254 700 000 000</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Nairobi, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 BusHub. All rights reserved. Built with Flask & Tailwind CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-hide flash messages
+        setTimeout(() => {
+            const flashContainer = document.getElementById('flash-container');
+            if (flashContainer) {
+                flashContainer.style.transition = 'opacity 0.5s';
+                flashContainer.style.opacity = '0';
+                setTimeout(() => flashContainer.remove(), 500);
+            }
+        }, 5000);
+    </script>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

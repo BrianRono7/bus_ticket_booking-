@@ -1019,3 +1019,1066 @@
 2025-10-05 17:29:50,558 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 6(0 bookings) and 7(0 bookings) into bus 13
 2025-10-05 17:29:51,563 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 8(0 bookings) and 9(0 bookings) into bus 14
 2025-10-05 17:32:13,109 - Thread-1 (_async_log_writer) - Booking BK000471: Client 5 booked seat 1 on bus 10 for 20251007
+2025-10-06 12:37:46,370 - Thread-1 (_async_log_writer) - Initialized bus 0
+2025-10-06 12:37:46,370 - Thread-1 (_async_log_writer) - Initialized bus 1
+2025-10-06 12:37:46,370 - Thread-1 (_async_log_writer) - Initialized bus 2
+2025-10-06 12:37:46,370 - Thread-1 (_async_log_writer) - Initialized bus 3
+2025-10-06 12:37:46,370 - Thread-1 (_async_log_writer) - Initialized bus 4
+2025-10-06 12:37:46,370 - Thread-1 (_async_log_writer) - Initialized bus 5
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Initialized bus 6
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Initialized bus 7
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Initialized bus 8
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Initialized bus 9
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000001: Client client_iter_0 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000002: Client client_iter_1 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000003: Client client_iter_2 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000004: Client client_iter_3 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000005: Client client_iter_4 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000006: Client client_iter_5 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000007: Client client_iter_6 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000008: Client client_iter_7 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000009: Client client_iter_8 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000010: Client client_iter_9 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000011: Client client_iter_10 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000012: Client client_iter_11 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,371 - Thread-1 (_async_log_writer) - Booking BK000013: Client client_iter_12 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000014: Client client_iter_13 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000015: Client client_iter_14 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000016: Client client_iter_15 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000017: Client client_iter_16 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000018: Client client_iter_17 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000019: Client client_iter_18 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000020: Client client_iter_19 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000021: Client client_iter_20 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000022: Client client_iter_21 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000023: Client client_iter_22 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000024: Client client_iter_23 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000025: Client client_iter_24 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000026: Client client_iter_25 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000027: Client client_iter_26 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000028: Client client_iter_27 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000029: Client client_iter_28 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,372 - Thread-1 (_async_log_writer) - Booking BK000030: Client client_iter_29 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000031: Client client_thread_11 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000032: Client client_thread_3 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000033: Client client_thread_10 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000034: Client client_thread_14 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000035: Client client_thread_15 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000036: Client client_thread_17 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000037: Client client_thread_18 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000038: Client client_thread_9 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000039: Client client_thread_19 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000040: Client client_thread_22 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000041: Client client_thread_25 booked seat 3 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000042: Client client_thread_39 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000043: Client client_thread_26 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,385 - Thread-1 (_async_log_writer) - Booking BK000044: Client client_thread_40 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000045: Client client_thread_42 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000046: Client client_thread_16 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000047: Client client_thread_45 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000048: Client client_thread_44 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000049: Client client_thread_48 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000050: Client client_thread_20 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000051: Client client_thread_41 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000052: Client client_thread_13 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000053: Client client_thread_47 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000054: Client client_thread_43 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000055: Client client_thread_49 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000056: Client client_thread_0 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000057: Client client_thread_1 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000058: Client client_thread_12 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000059: Client client_thread_23 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000060: Client client_thread_28 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000061: Client client_thread_29 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000062: Client client_thread_5 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000063: Client client_thread_32 booked seat 3 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000064: Client client_thread_35 booked seat 4 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000065: Client client_thread_36 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000066: Client client_thread_6 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000067: Client client_thread_4 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000068: Client client_thread_38 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000069: Client client_thread_2 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000070: Client client_thread_30 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000071: Client client_thread_31 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000072: Client client_thread_37 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000073: Client client_thread_46 booked seat 3 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000074: Client client_thread_21 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000075: Client client_thread_7 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000076: Client client_thread_27 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,386 - Thread-1 (_async_log_writer) - Booking BK000077: Client client_thread_33 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000078: Client client_thread_8 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000079: Client client_thread_34 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000080: Client client_thread_24 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000081: Client client_pool_0 booked seat 3 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000082: Client client_pool_1 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000083: Client client_pool_2 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000084: Client client_pool_3 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000085: Client client_pool_4 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000086: Client client_pool_5 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000087: Client client_pool_6 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000088: Client client_pool_7 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000089: Client client_pool_8 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,387 - Thread-1 (_async_log_writer) - Booking BK000090: Client client_pool_9 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000091: Client client_pool_10 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000092: Client client_pool_11 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000093: Client client_pool_12 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000094: Client client_pool_13 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000095: Client client_pool_14 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000096: Client client_pool_15 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000097: Client client_pool_16 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000098: Client client_pool_17 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000099: Client client_pool_18 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000100: Client client_pool_19 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000101: Client client_pool_20 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000102: Client client_pool_21 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000103: Client client_pool_22 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000104: Client client_pool_23 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000105: Client client_pool_24 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000106: Client client_pool_25 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000107: Client client_pool_26 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000108: Client client_pool_27 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000109: Client client_pool_28 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000110: Client client_pool_29 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000111: Client client_pool_30 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000112: Client client_pool_31 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000113: Client client_pool_32 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000114: Client client_pool_33 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000115: Client client_pool_34 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000116: Client client_pool_35 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000117: Client client_pool_36 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000118: Client client_pool_37 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000119: Client client_pool_38 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,388 - Thread-1 (_async_log_writer) - Booking BK000120: Client client_pool_39 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000121: Client morning_46 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000122: Client morning_32 booked seat 2 on bus 0 for 2025-10-11
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000123: Client morning_19 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000124: Client morning_20 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000125: Client morning_39 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000126: Client morning_5 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000127: Client morning_49 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000128: Client morning_1 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000129: Client morning_56 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,421 - Thread-1 (_async_log_writer) - Booking BK000130: Client morning_29 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000131: Client morning_64 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000132: Client morning_8 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000133: Client morning_14 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000134: Client morning_76 booked seat 3 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000135: Client morning_52 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000136: Client morning_4 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000137: Client morning_15 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000138: Client morning_41 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000139: Client morning_65 booked seat 2 on bus 0 for 2025-10-10
+2025-10-06 12:37:46,445 - Thread-1 (_async_log_writer) - Booking BK000140: Client morning_9 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000141: Client morning_3 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000142: Client morning_38 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000143: Client morning_55 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000144: Client morning_77 booked seat 4 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000145: Client morning_27 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000146: Client morning_61 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000147: Client morning_7 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000148: Client morning_78 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000149: Client morning_50 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,480 - Thread-1 (_async_log_writer) - Booking BK000150: Client morning_24 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000151: Client morning_60 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000152: Client morning_18 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000153: Client morning_12 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000154: Client morning_43 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000155: Client morning_0 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000156: Client morning_71 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000157: Client morning_79 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000158: Client morning_30 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000159: Client morning_34 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,510 - Thread-1 (_async_log_writer) - Booking BK000160: Client morning_37 booked seat 3 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000161: Client morning_2 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000162: Client morning_23 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000163: Client morning_69 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000164: Client morning_16 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000165: Client morning_17 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000166: Client morning_48 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000167: Client morning_22 booked seat 2 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000168: Client morning_59 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000169: Client morning_67 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,541 - Thread-1 (_async_log_writer) - Booking BK000170: Client morning_45 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000171: Client morning_63 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000172: Client morning_62 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000173: Client morning_66 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000174: Client morning_28 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000175: Client morning_57 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000176: Client morning_11 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000177: Client morning_13 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000178: Client morning_73 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000179: Client morning_72 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:46,562 - Thread-1 (_async_log_writer) - Booking BK000180: Client morning_68 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:46,578 - Thread-1 (_async_log_writer) - Booking BK000181: Client morning_31 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,578 - Thread-1 (_async_log_writer) - Booking BK000182: Client morning_6 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,578 - Thread-1 (_async_log_writer) - Booking BK000183: Client morning_40 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:46,578 - Thread-1 (_async_log_writer) - Booking BK000184: Client morning_47 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,578 - Thread-1 (_async_log_writer) - Booking BK000185: Client morning_44 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:46,578 - Thread-1 (_async_log_writer) - Booking BK000186: Client morning_51 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:46,578 - Thread-1 (_async_log_writer) - Booking BK000187: Client morning_35 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,578 - Thread-1 (_async_log_writer) - Booking BK000188: Client morning_53 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:46,579 - Thread-1 (_async_log_writer) - Booking BK000189: Client morning_21 booked seat 2 on bus 0 for 2025-10-11
+2025-10-06 12:37:46,579 - Thread-1 (_async_log_writer) - Booking BK000190: Client morning_74 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,596 - Thread-1 (_async_log_writer) - Booking BK000191: Client morning_25 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,597 - Thread-1 (_async_log_writer) - Booking BK000192: Client morning_70 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,597 - Thread-1 (_async_log_writer) - Booking BK000193: Client morning_75 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:46,597 - Thread-1 (_async_log_writer) - Booking BK000194: Client morning_10 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:46,597 - Thread-1 (_async_log_writer) - Booking BK000195: Client morning_54 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:46,597 - Thread-1 (_async_log_writer) - Booking BK000196: Client morning_26 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:46,597 - Thread-1 (_async_log_writer) - Booking BK000197: Client morning_42 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:46,597 - Thread-1 (_async_log_writer) - Booking BK000198: Client morning_33 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,597 - Thread-1 (_async_log_writer) - Booking BK000199: Client morning_36 booked seat 2 on bus 0 for 2025-10-12
+2025-10-06 12:37:46,597 - Thread-1 (_async_log_writer) - Booking BK000200: Client morning_58 booked seat 3 on bus 0 for 2025-10-12
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000201: Client afternoon_33 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000202: Client afternoon_58 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000203: Client afternoon_41 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000204: Client afternoon_9 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000205: Client afternoon_28 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000206: Client afternoon_19 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000207: Client afternoon_48 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000208: Client afternoon_37 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000209: Client afternoon_21 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:47,584 - Thread-1 (_async_log_writer) - Booking BK000210: Client afternoon_2 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:47,611 - Thread-1 (_async_log_writer) - Booking BK000211: Client afternoon_18 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:47,611 - Thread-1 (_async_log_writer) - Booking BK000212: Client afternoon_26 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:47,612 - Thread-1 (_async_log_writer) - Booking BK000213: Client afternoon_30 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,612 - Thread-1 (_async_log_writer) - Booking BK000214: Client afternoon_31 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,612 - Thread-1 (_async_log_writer) - Booking BK000215: Client afternoon_40 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,612 - Thread-1 (_async_log_writer) - Booking BK000216: Client afternoon_4 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:47,612 - Thread-1 (_async_log_writer) - Booking BK000217: Client afternoon_22 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:47,612 - Thread-1 (_async_log_writer) - Booking BK000218: Client afternoon_49 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,612 - Thread-1 (_async_log_writer) - Booking BK000219: Client afternoon_13 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,612 - Thread-1 (_async_log_writer) - Booking BK000220: Client afternoon_35 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:47,696 - Thread-1 (_async_log_writer) - Booking BK000221: Client afternoon_5 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,697 - Thread-1 (_async_log_writer) - Booking BK000222: Client afternoon_7 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,697 - Thread-1 (_async_log_writer) - Booking BK000223: Client afternoon_42 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:47,697 - Thread-1 (_async_log_writer) - Booking BK000224: Client afternoon_11 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,697 - Thread-1 (_async_log_writer) - Booking BK000225: Client afternoon_8 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,697 - Thread-1 (_async_log_writer) - Booking BK000226: Client afternoon_43 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:47,697 - Thread-1 (_async_log_writer) - Booking BK000227: Client afternoon_54 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,697 - Thread-1 (_async_log_writer) - Booking BK000228: Client afternoon_14 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,698 - Thread-1 (_async_log_writer) - Booking BK000229: Client afternoon_38 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,698 - Thread-1 (_async_log_writer) - Booking BK000230: Client afternoon_6 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:47,746 - Thread-1 (_async_log_writer) - Booking BK000231: Client afternoon_39 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,746 - Thread-1 (_async_log_writer) - Booking BK000232: Client afternoon_57 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:47,746 - Thread-1 (_async_log_writer) - Booking BK000233: Client afternoon_25 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,747 - Thread-1 (_async_log_writer) - Booking BK000234: Client afternoon_23 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,747 - Thread-1 (_async_log_writer) - Booking BK000235: Client afternoon_52 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:47,747 - Thread-1 (_async_log_writer) - Booking BK000236: Client afternoon_44 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:47,747 - Thread-1 (_async_log_writer) - Booking BK000237: Client afternoon_15 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,747 - Thread-1 (_async_log_writer) - Booking BK000238: Client afternoon_59 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,747 - Thread-1 (_async_log_writer) - Booking BK000239: Client afternoon_3 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,747 - Thread-1 (_async_log_writer) - Booking BK000240: Client afternoon_34 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000241: Client afternoon_12 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000242: Client afternoon_47 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000243: Client afternoon_45 booked seat 2 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000244: Client afternoon_32 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000245: Client afternoon_36 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000246: Client afternoon_10 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000247: Client afternoon_53 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000248: Client afternoon_27 booked seat 2 on bus 0 for 2025-10-12
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000249: Client afternoon_0 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,825 - Thread-1 (_async_log_writer) - Booking BK000250: Client afternoon_55 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:47,893 - Thread-1 (_async_log_writer) - Booking BK000251: Client afternoon_24 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,893 - Thread-1 (_async_log_writer) - Booking BK000252: Client afternoon_56 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,893 - Thread-1 (_async_log_writer) - Booking BK000253: Client afternoon_1 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,893 - Thread-1 (_async_log_writer) - Booking BK000254: Client afternoon_50 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:47,893 - Thread-1 (_async_log_writer) - Booking BK000255: Client afternoon_51 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:47,893 - Thread-1 (_async_log_writer) - Booking BK000256: Client afternoon_16 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:47,893 - Thread-1 (_async_log_writer) - Booking BK000257: Client afternoon_29 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:47,893 - Thread-1 (_async_log_writer) - Booking BK000258: Client afternoon_46 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:47,893 - Thread-1 (_async_log_writer) - Booking BK000259: Client afternoon_20 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:47,894 - Thread-1 (_async_log_writer) - Booking BK000260: Client afternoon_17 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,440 - Thread-1 (_async_log_writer) - Booking BK000261: Client evening_6 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,440 - Thread-1 (_async_log_writer) - Booking BK000262: Client evening_41 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,440 - Thread-1 (_async_log_writer) - Booking BK000263: Client evening_45 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,441 - Thread-1 (_async_log_writer) - Booking BK000264: Client evening_50 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,441 - Thread-1 (_async_log_writer) - Booking BK000265: Client evening_7 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,441 - Thread-1 (_async_log_writer) - Booking BK000266: Client evening_27 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:48,441 - Thread-1 (_async_log_writer) - Booking BK000267: Client evening_35 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,441 - Thread-1 (_async_log_writer) - Booking BK000268: Client evening_11 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,441 - Thread-1 (_async_log_writer) - Booking BK000269: Client evening_37 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,441 - Thread-1 (_async_log_writer) - Booking BK000270: Client evening_36 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,469 - Thread-1 (_async_log_writer) - Booking BK000271: Client evening_48 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,469 - Thread-1 (_async_log_writer) - Booking BK000272: Client evening_23 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,469 - Thread-1 (_async_log_writer) - Booking BK000273: Client evening_17 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,469 - Thread-1 (_async_log_writer) - Booking BK000274: Client evening_54 booked seat 2 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,469 - Thread-1 (_async_log_writer) - Booking BK000275: Client evening_12 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,469 - Thread-1 (_async_log_writer) - Booking BK000276: Client evening_42 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,469 - Thread-1 (_async_log_writer) - Booking BK000277: Client evening_38 booked seat 2 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,470 - Thread-1 (_async_log_writer) - Booking BK000278: Client evening_43 booked seat 4 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,470 - Thread-1 (_async_log_writer) - Booking BK000279: Client evening_58 booked seat 5 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,470 - Thread-1 (_async_log_writer) - Booking BK000280: Client evening_28 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000281: Client evening_39 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000282: Client evening_0 booked seat 2 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000283: Client evening_32 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000284: Client evening_14 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000285: Client evening_16 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000286: Client evening_13 booked seat 2 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000287: Client evening_25 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000288: Client evening_18 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000289: Client evening_57 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:48,488 - Thread-1 (_async_log_writer) - Booking BK000290: Client evening_4 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,509 - Thread-1 (_async_log_writer) - Booking BK000291: Client evening_19 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,509 - Thread-1 (_async_log_writer) - Booking BK000292: Client evening_53 booked seat 3 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,509 - Thread-1 (_async_log_writer) - Booking BK000293: Client evening_31 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:48,509 - Thread-1 (_async_log_writer) - Booking BK000294: Client evening_2 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,509 - Thread-1 (_async_log_writer) - Booking BK000295: Client evening_21 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,509 - Thread-1 (_async_log_writer) - Booking BK000296: Client evening_24 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,510 - Thread-1 (_async_log_writer) - Booking BK000297: Client evening_52 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,510 - Thread-1 (_async_log_writer) - Booking BK000298: Client evening_59 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,510 - Thread-1 (_async_log_writer) - Booking BK000299: Client evening_56 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,510 - Thread-1 (_async_log_writer) - Booking BK000300: Client evening_26 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,533 - Thread-1 (_async_log_writer) - Booking BK000301: Client evening_40 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,533 - Thread-1 (_async_log_writer) - Booking BK000302: Client evening_5 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,533 - Thread-1 (_async_log_writer) - Booking BK000303: Client evening_46 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,533 - Thread-1 (_async_log_writer) - Booking BK000304: Client evening_51 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,533 - Thread-1 (_async_log_writer) - Booking BK000305: Client evening_20 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,534 - Thread-1 (_async_log_writer) - Booking BK000306: Client evening_8 booked seat 3 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,534 - Thread-1 (_async_log_writer) - Booking BK000307: Client evening_29 booked seat 4 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,534 - Thread-1 (_async_log_writer) - Booking BK000308: Client evening_49 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,534 - Thread-1 (_async_log_writer) - Booking BK000309: Client evening_15 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,534 - Thread-1 (_async_log_writer) - Booking BK000310: Client evening_22 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,554 - Thread-1 (_async_log_writer) - Booking BK000311: Client evening_30 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,555 - Thread-1 (_async_log_writer) - Booking BK000312: Client evening_33 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,555 - Thread-1 (_async_log_writer) - Booking BK000313: Client evening_34 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,555 - Thread-1 (_async_log_writer) - Booking BK000314: Client evening_3 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,555 - Thread-1 (_async_log_writer) - Booking BK000315: Client evening_1 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,556 - Thread-1 (_async_log_writer) - Booking BK000316: Client evening_44 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,556 - Thread-1 (_async_log_writer) - Booking BK000317: Client evening_10 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,557 - Thread-1 (_async_log_writer) - Booking BK000318: Client evening_47 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,557 - Thread-1 (_async_log_writer) - Booking BK000319: Client evening_55 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,557 - Thread-1 (_async_log_writer) - Booking BK000320: Client evening_9 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,558 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000121 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,558 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000312 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,559 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000268 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,559 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000164 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,559 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000139 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,560 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000247 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,560 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000158 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,560 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000238 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,560 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000239 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,562 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000198 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,562 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000131 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,562 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000231 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,562 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000263 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,563 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000227 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,563 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000143 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,563 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000207 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,565 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000186 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,565 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000266 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,566 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000309 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,566 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000146 removed from database (bus 0 not found or other issue)
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000321: Client burst_client_0 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000322: Client burst_client_1 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000323: Client burst_client_6 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000324: Client burst_client_11 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000325: Client burst_client_10 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000326: Client burst_client_7 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000327: Client burst_client_2 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000328: Client burst_client_3 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000329: Client burst_client_13 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:37:48,571 - Thread-1 (_async_log_writer) - Booking BK000330: Client burst_client_8 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:37:48,572 - Thread-1 (_async_log_writer) - Booking BK000331: Client burst_client_17 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:37:48,572 - Thread-1 (_async_log_writer) - Booking BK000332: Client burst_client_4 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,572 - Thread-1 (_async_log_writer) - Booking BK000333: Client burst_client_19 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:37:48,573 - Thread-1 (_async_log_writer) - Booking BK000334: Client burst_client_5 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,573 - Thread-1 (_async_log_writer) - Booking BK000335: Client burst_client_23 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:37:48,573 - Thread-1 (_async_log_writer) - Booking BK000336: Client burst_client_9 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:37:48,573 - Thread-1 (_async_log_writer) - Booking BK000337: Client burst_client_29 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:37:48,573 - Thread-1 (_async_log_writer) - Booking BK000338: Client burst_client_12 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:37:48,573 - Thread-1 (_async_log_writer) - Booking BK000339: Client burst_client_26 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:37:48,573 - Thread-1 (_async_log_writer) - Booking BK000340: Client burst_client_32 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000341: Client burst_client_22 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000342: Client burst_client_31 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000343: Client burst_client_18 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000344: Client burst_client_44 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000345: Client burst_client_27 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000346: Client burst_client_33 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000347: Client burst_client_36 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000348: Client burst_client_34 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000349: Client burst_client_35 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,574 - Thread-1 (_async_log_writer) - Booking BK000350: Client burst_client_14 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:37:48,575 - Thread-1 (_async_log_writer) - Booking BK000351: Client burst_client_15 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:37:48,575 - Thread-1 (_async_log_writer) - Booking BK000352: Client burst_client_20 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:37:48,575 - Thread-1 (_async_log_writer) - Booking BK000353: Client burst_client_37 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:37:48,575 - Thread-1 (_async_log_writer) - Booking BK000354: Client burst_client_24 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:37:48,575 - Thread-1 (_async_log_writer) - Booking BK000355: Client burst_client_21 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:37:48,575 - Thread-1 (_async_log_writer) - Booking BK000356: Client burst_client_25 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:37:48,575 - Thread-1 (_async_log_writer) - Booking BK000357: Client burst_client_16 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:37:48,575 - Thread-1 (_async_log_writer) - Booking BK000358: Client burst_client_30 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,575 - Thread-1 (_async_log_writer) - Booking BK000359: Client burst_client_28 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:37:48,576 - Thread-1 (_async_log_writer) - Booking BK000360: Client burst_client_39 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000361: Client burst_client_40 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000362: Client burst_client_41 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000363: Client burst_client_42 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000364: Client burst_client_43 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000365: Client burst_client_51 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000366: Client burst_client_52 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000367: Client burst_client_53 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000368: Client burst_client_38 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000369: Client burst_client_45 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000370: Client burst_client_58 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000371: Client burst_client_57 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000372: Client burst_client_46 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:37:48,577 - Thread-1 (_async_log_writer) - Booking BK000373: Client burst_client_59 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000374: Client burst_client_49 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000375: Client burst_client_48 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000376: Client burst_client_50 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000377: Client burst_client_54 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000378: Client burst_client_55 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000379: Client burst_client_61 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000380: Client burst_client_75 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000381: Client burst_client_60 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000382: Client burst_client_77 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000383: Client burst_client_72 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000384: Client burst_client_74 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000385: Client burst_client_63 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000386: Client burst_client_56 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:37:48,578 - Thread-1 (_async_log_writer) - Booking BK000387: Client burst_client_68 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:37:48,579 - Thread-1 (_async_log_writer) - Booking BK000388: Client burst_client_78 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:37:48,580 - Thread-1 (_async_log_writer) - Booking BK000389: Client burst_client_73 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000390: Client burst_client_62 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000391: Client burst_client_64 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000392: Client burst_client_47 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000393: Client burst_client_66 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000394: Client burst_client_67 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000395: Client burst_client_71 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000396: Client burst_client_79 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000397: Client burst_client_65 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000398: Client burst_client_70 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000399: Client burst_client_69 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000400: Client burst_client_76 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000401: Client burst_client_105 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000402: Client burst_client_82 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000403: Client burst_client_83 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:37:48,581 - Thread-1 (_async_log_writer) - Booking BK000404: Client burst_client_101 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000405: Client burst_client_97 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000406: Client burst_client_107 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000407: Client burst_client_89 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000408: Client burst_client_91 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000409: Client burst_client_81 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000410: Client burst_client_99 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000411: Client burst_client_80 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000412: Client burst_client_109 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000413: Client burst_client_103 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000414: Client burst_client_93 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000415: Client burst_client_95 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000416: Client burst_client_87 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000417: Client burst_client_84 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000418: Client burst_client_90 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000419: Client burst_client_92 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000420: Client burst_client_94 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000421: Client burst_client_96 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000422: Client burst_client_98 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000423: Client burst_client_100 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000424: Client burst_client_104 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000425: Client burst_client_110 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000426: Client burst_client_116 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000427: Client burst_client_117 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000428: Client burst_client_112 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000429: Client burst_client_106 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000430: Client burst_client_118 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000431: Client burst_client_102 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000432: Client burst_client_85 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000433: Client burst_client_114 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000434: Client burst_client_88 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000435: Client burst_client_128 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000436: Client burst_client_111 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000437: Client burst_client_113 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000438: Client burst_client_119 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000439: Client burst_client_108 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:37:48,582 - Thread-1 (_async_log_writer) - Booking BK000440: Client burst_client_115 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000441: Client burst_client_120 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000442: Client burst_client_121 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000443: Client burst_client_122 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000444: Client burst_client_138 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000445: Client burst_client_124 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000446: Client burst_client_86 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000447: Client burst_client_123 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000448: Client burst_client_125 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000449: Client burst_client_126 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000450: Client burst_client_135 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000451: Client burst_client_134 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000452: Client burst_client_133 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000453: Client burst_client_136 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000454: Client burst_client_140 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000455: Client burst_client_137 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000456: Client burst_client_143 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000457: Client burst_client_146 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000458: Client burst_client_142 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:37:48,583 - Thread-1 (_async_log_writer) - Booking BK000459: Client burst_client_148 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000460: Client burst_client_132 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000461: Client burst_client_127 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000462: Client burst_client_131 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000463: Client burst_client_129 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000464: Client burst_client_141 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000465: Client burst_client_144 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000466: Client burst_client_145 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000467: Client burst_client_147 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000468: Client burst_client_130 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000469: Client burst_client_139 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Booking BK000470: Client burst_client_149 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Updated booking BK000470: Bus 0 Seat 1 → Bus 10 Seat 1
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Updated booking BK000318: Bus 0 Seat 2 → Bus 10 Seat 2
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Updated booking BK000306: Bus 0 Seat 3 → Bus 10 Seat 3
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Updated booking BK000307: Bus 0 Seat 4 → Bus 10 Seat 4
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Updated booking BK000279: Bus 0 Seat 5 → Bus 10 Seat 5
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 0(5 bookings) and 1(0 bookings) into bus 10
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 2(0 bookings) and 3(0 bookings) into bus 11
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 4(0 bookings) and 5(0 bookings) into bus 12
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 6(0 bookings) and 7(0 bookings) into bus 13
+2025-10-06 12:37:48,584 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 8(0 bookings) and 9(0 bookings) into bus 14
+2025-10-06 12:42:12,080 - Thread-1 (_async_log_writer) - Initialized bus 0
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Initialized bus 1
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Initialized bus 2
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Initialized bus 3
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Initialized bus 4
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Initialized bus 5
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Initialized bus 6
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Initialized bus 7
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Initialized bus 8
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Initialized bus 9
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Booking BK000001: Client client_iter_0 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Booking BK000002: Client client_iter_1 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Booking BK000003: Client client_iter_2 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Booking BK000004: Client client_iter_3 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Booking BK000005: Client client_iter_4 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Booking BK000006: Client client_iter_5 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Booking BK000007: Client client_iter_6 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Booking BK000008: Client client_iter_7 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,081 - Thread-1 (_async_log_writer) - Booking BK000009: Client client_iter_8 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000010: Client client_iter_9 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000011: Client client_iter_10 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000012: Client client_iter_11 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000013: Client client_iter_12 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000014: Client client_iter_13 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000015: Client client_iter_14 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000016: Client client_iter_15 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000017: Client client_iter_16 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000018: Client client_iter_17 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000019: Client client_iter_18 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000020: Client client_iter_19 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000021: Client client_iter_20 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000022: Client client_iter_21 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000023: Client client_iter_22 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000024: Client client_iter_23 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000025: Client client_iter_24 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000026: Client client_iter_25 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000027: Client client_iter_26 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000028: Client client_iter_27 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000029: Client client_iter_28 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,082 - Thread-1 (_async_log_writer) - Booking BK000030: Client client_iter_29 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000031: Client client_thread_4 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000032: Client client_thread_3 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000033: Client client_thread_5 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000034: Client client_thread_6 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000035: Client client_thread_8 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000036: Client client_thread_7 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000037: Client client_thread_0 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000038: Client client_thread_1 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000039: Client client_thread_40 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000040: Client client_thread_41 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000041: Client client_thread_42 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000042: Client client_thread_44 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000043: Client client_thread_43 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000044: Client client_thread_45 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000045: Client client_thread_46 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000046: Client client_thread_47 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000047: Client client_thread_48 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000048: Client client_thread_49 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000049: Client client_thread_2 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000050: Client client_thread_13 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000051: Client client_thread_9 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000052: Client client_thread_11 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000053: Client client_thread_12 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000054: Client client_thread_14 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000055: Client client_thread_17 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,096 - Thread-1 (_async_log_writer) - Booking BK000056: Client client_thread_16 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000057: Client client_thread_19 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000058: Client client_thread_18 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000059: Client client_thread_20 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000060: Client client_thread_21 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000061: Client client_thread_22 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000062: Client client_thread_23 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000063: Client client_thread_25 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000064: Client client_thread_24 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000065: Client client_thread_28 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000066: Client client_thread_27 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000067: Client client_thread_29 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000068: Client client_thread_30 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000069: Client client_thread_31 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000070: Client client_thread_32 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000071: Client client_thread_34 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000072: Client client_thread_35 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000073: Client client_thread_36 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000074: Client client_thread_38 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000075: Client client_thread_37 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000076: Client client_thread_39 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000077: Client client_thread_15 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000078: Client client_thread_33 booked seat 3 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000079: Client client_thread_26 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,097 - Thread-1 (_async_log_writer) - Booking BK000080: Client client_thread_10 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000081: Client client_pool_0 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000082: Client client_pool_1 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000083: Client client_pool_2 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000084: Client client_pool_3 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000085: Client client_pool_4 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000086: Client client_pool_5 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000087: Client client_pool_6 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000088: Client client_pool_7 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000089: Client client_pool_8 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000090: Client client_pool_9 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000091: Client client_pool_10 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000092: Client client_pool_11 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000093: Client client_pool_12 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000094: Client client_pool_13 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000095: Client client_pool_14 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000096: Client client_pool_15 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000097: Client client_pool_16 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000098: Client client_pool_17 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000099: Client client_pool_18 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,098 - Thread-1 (_async_log_writer) - Booking BK000100: Client client_pool_19 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000101: Client client_pool_20 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000102: Client client_pool_21 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000103: Client client_pool_22 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000104: Client client_pool_23 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000105: Client client_pool_24 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000106: Client client_pool_25 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000107: Client client_pool_26 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000108: Client client_pool_27 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000109: Client client_pool_28 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000110: Client client_pool_29 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000111: Client client_pool_30 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000112: Client client_pool_31 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000113: Client client_pool_32 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000114: Client client_pool_33 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000115: Client client_pool_34 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000116: Client client_pool_35 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000117: Client client_pool_36 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000118: Client client_pool_37 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000119: Client client_pool_38 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,099 - Thread-1 (_async_log_writer) - Booking BK000120: Client client_pool_39 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000121: Client morning_32 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000122: Client morning_33 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000123: Client morning_21 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000124: Client morning_20 booked seat 2 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000125: Client morning_13 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000126: Client morning_3 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000127: Client morning_53 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000128: Client morning_34 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000129: Client morning_16 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,125 - Thread-1 (_async_log_writer) - Booking BK000130: Client morning_43 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000131: Client morning_45 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000132: Client morning_55 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000133: Client morning_41 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000134: Client morning_7 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000135: Client morning_49 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000136: Client morning_26 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000137: Client morning_73 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000138: Client morning_24 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000139: Client morning_37 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,144 - Thread-1 (_async_log_writer) - Booking BK000140: Client morning_5 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000141: Client morning_4 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000142: Client morning_17 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000143: Client morning_65 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000144: Client morning_71 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000145: Client morning_61 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000146: Client morning_39 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000147: Client morning_31 booked seat 2 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000148: Client morning_10 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000149: Client morning_15 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,172 - Thread-1 (_async_log_writer) - Booking BK000150: Client morning_40 booked seat 2 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000151: Client morning_50 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000152: Client morning_18 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000153: Client morning_68 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000154: Client morning_57 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000155: Client morning_56 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000156: Client morning_76 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000157: Client morning_8 booked seat 2 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000158: Client morning_78 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000159: Client morning_30 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,195 - Thread-1 (_async_log_writer) - Booking BK000160: Client morning_70 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,218 - Thread-1 (_async_log_writer) - Booking BK000161: Client morning_64 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,218 - Thread-1 (_async_log_writer) - Booking BK000162: Client morning_72 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,218 - Thread-1 (_async_log_writer) - Booking BK000163: Client morning_0 booked seat 2 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,218 - Thread-1 (_async_log_writer) - Booking BK000164: Client morning_67 booked seat 3 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,218 - Thread-1 (_async_log_writer) - Booking BK000165: Client morning_42 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,218 - Thread-1 (_async_log_writer) - Booking BK000166: Client morning_38 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,218 - Thread-1 (_async_log_writer) - Booking BK000167: Client morning_14 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,218 - Thread-1 (_async_log_writer) - Booking BK000168: Client morning_62 booked seat 3 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,219 - Thread-1 (_async_log_writer) - Booking BK000169: Client morning_52 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,219 - Thread-1 (_async_log_writer) - Booking BK000170: Client morning_51 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000171: Client morning_29 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000172: Client morning_74 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000173: Client morning_1 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000174: Client morning_2 booked seat 2 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000175: Client morning_11 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000176: Client morning_35 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000177: Client morning_19 booked seat 2 on bus 0 for 2025-10-10
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000178: Client morning_6 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000179: Client morning_48 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,254 - Thread-1 (_async_log_writer) - Booking BK000180: Client morning_46 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000181: Client morning_23 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000182: Client morning_69 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000183: Client morning_9 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000184: Client morning_22 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000185: Client morning_58 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000186: Client morning_25 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000187: Client morning_75 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000188: Client morning_63 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000189: Client morning_12 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,292 - Thread-1 (_async_log_writer) - Booking BK000190: Client morning_54 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:42:12,305 - Thread-1 (_async_log_writer) - Booking BK000191: Client morning_60 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,306 - Thread-1 (_async_log_writer) - Booking BK000192: Client morning_77 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:12,306 - Thread-1 (_async_log_writer) - Booking BK000193: Client morning_47 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:12,306 - Thread-1 (_async_log_writer) - Booking BK000194: Client morning_79 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,306 - Thread-1 (_async_log_writer) - Booking BK000195: Client morning_59 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:12,306 - Thread-1 (_async_log_writer) - Booking BK000196: Client morning_36 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:12,306 - Thread-1 (_async_log_writer) - Booking BK000197: Client morning_66 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,306 - Thread-1 (_async_log_writer) - Booking BK000198: Client morning_27 booked seat 2 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,306 - Thread-1 (_async_log_writer) - Booking BK000199: Client morning_44 booked seat 3 on bus 0 for 2025-10-12
+2025-10-06 12:42:12,306 - Thread-1 (_async_log_writer) - Booking BK000200: Client morning_28 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000201: Client afternoon_6 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000202: Client afternoon_53 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000203: Client afternoon_19 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000204: Client afternoon_43 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000205: Client afternoon_59 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000206: Client afternoon_34 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000207: Client afternoon_4 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000208: Client afternoon_15 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000209: Client afternoon_29 booked seat 2 on bus 0 for 2025-10-11
+2025-10-06 12:42:13,256 - Thread-1 (_async_log_writer) - Booking BK000210: Client afternoon_8 booked seat 3 on bus 0 for 2025-10-11
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000211: Client afternoon_47 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000212: Client afternoon_37 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000213: Client afternoon_30 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000214: Client afternoon_3 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000215: Client afternoon_9 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000216: Client afternoon_22 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000217: Client afternoon_35 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000218: Client afternoon_23 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000219: Client afternoon_38 booked seat 3 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,337 - Thread-1 (_async_log_writer) - Booking BK000220: Client afternoon_52 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:13,377 - Thread-1 (_async_log_writer) - Booking BK000221: Client afternoon_32 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:13,377 - Thread-1 (_async_log_writer) - Booking BK000222: Client afternoon_14 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:13,377 - Thread-1 (_async_log_writer) - Booking BK000223: Client afternoon_21 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:13,377 - Thread-1 (_async_log_writer) - Booking BK000224: Client afternoon_1 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,378 - Thread-1 (_async_log_writer) - Booking BK000225: Client afternoon_58 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,378 - Thread-1 (_async_log_writer) - Booking BK000226: Client afternoon_50 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,378 - Thread-1 (_async_log_writer) - Booking BK000227: Client afternoon_55 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,378 - Thread-1 (_async_log_writer) - Booking BK000228: Client afternoon_0 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:13,378 - Thread-1 (_async_log_writer) - Booking BK000229: Client afternoon_51 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:13,378 - Thread-1 (_async_log_writer) - Booking BK000230: Client afternoon_16 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000231: Client afternoon_42 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000232: Client afternoon_7 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000233: Client afternoon_28 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000234: Client afternoon_10 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000235: Client afternoon_49 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000236: Client afternoon_26 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000237: Client afternoon_12 booked seat 3 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000238: Client afternoon_13 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000239: Client afternoon_44 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:13,457 - Thread-1 (_async_log_writer) - Booking BK000240: Client afternoon_33 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:13,524 - Thread-1 (_async_log_writer) - Booking BK000241: Client afternoon_54 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:13,525 - Thread-1 (_async_log_writer) - Booking BK000242: Client afternoon_18 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:13,525 - Thread-1 (_async_log_writer) - Booking BK000243: Client afternoon_41 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:13,525 - Thread-1 (_async_log_writer) - Booking BK000244: Client afternoon_5 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:13,525 - Thread-1 (_async_log_writer) - Booking BK000245: Client afternoon_39 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:13,525 - Thread-1 (_async_log_writer) - Booking BK000246: Client afternoon_31 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:13,525 - Thread-1 (_async_log_writer) - Booking BK000247: Client afternoon_20 booked seat 2 on bus 0 for 2025-10-12
+2025-10-06 12:42:13,525 - Thread-1 (_async_log_writer) - Booking BK000248: Client afternoon_27 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:13,525 - Thread-1 (_async_log_writer) - Booking BK000249: Client afternoon_45 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,525 - Thread-1 (_async_log_writer) - Booking BK000250: Client afternoon_2 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:42:13,605 - Thread-1 (_async_log_writer) - Booking BK000251: Client afternoon_25 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:13,605 - Thread-1 (_async_log_writer) - Booking BK000252: Client afternoon_17 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:13,605 - Thread-1 (_async_log_writer) - Booking BK000253: Client afternoon_46 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:13,605 - Thread-1 (_async_log_writer) - Booking BK000254: Client afternoon_40 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:13,605 - Thread-1 (_async_log_writer) - Booking BK000255: Client afternoon_48 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:13,605 - Thread-1 (_async_log_writer) - Booking BK000256: Client afternoon_24 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:13,605 - Thread-1 (_async_log_writer) - Booking BK000257: Client afternoon_56 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:13,606 - Thread-1 (_async_log_writer) - Booking BK000258: Client afternoon_36 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:13,606 - Thread-1 (_async_log_writer) - Booking BK000259: Client afternoon_57 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:13,606 - Thread-1 (_async_log_writer) - Booking BK000260: Client afternoon_11 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000261: Client evening_9 booked seat 2 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000262: Client evening_13 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000263: Client evening_34 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000264: Client evening_38 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000265: Client evening_48 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000266: Client evening_14 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000267: Client evening_29 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000268: Client evening_27 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000269: Client evening_12 booked seat 2 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,145 - Thread-1 (_async_log_writer) - Booking BK000270: Client evening_7 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,167 - Thread-1 (_async_log_writer) - Booking BK000271: Client evening_56 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,168 - Thread-1 (_async_log_writer) - Booking BK000272: Client evening_10 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,168 - Thread-1 (_async_log_writer) - Booking BK000273: Client evening_22 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,168 - Thread-1 (_async_log_writer) - Booking BK000274: Client evening_17 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,168 - Thread-1 (_async_log_writer) - Booking BK000275: Client evening_2 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,168 - Thread-1 (_async_log_writer) - Booking BK000276: Client evening_31 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,168 - Thread-1 (_async_log_writer) - Booking BK000277: Client evening_33 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,168 - Thread-1 (_async_log_writer) - Booking BK000278: Client evening_58 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,168 - Thread-1 (_async_log_writer) - Booking BK000279: Client evening_40 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,168 - Thread-1 (_async_log_writer) - Booking BK000280: Client evening_21 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,189 - Thread-1 (_async_log_writer) - Booking BK000281: Client evening_37 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,190 - Thread-1 (_async_log_writer) - Booking BK000282: Client evening_35 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,190 - Thread-1 (_async_log_writer) - Booking BK000283: Client evening_32 booked seat 2 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,190 - Thread-1 (_async_log_writer) - Booking BK000284: Client evening_52 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,190 - Thread-1 (_async_log_writer) - Booking BK000285: Client evening_28 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,190 - Thread-1 (_async_log_writer) - Booking BK000286: Client evening_26 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,190 - Thread-1 (_async_log_writer) - Booking BK000287: Client evening_36 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,190 - Thread-1 (_async_log_writer) - Booking BK000288: Client evening_53 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,190 - Thread-1 (_async_log_writer) - Booking BK000289: Client evening_43 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,190 - Thread-1 (_async_log_writer) - Booking BK000290: Client evening_20 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000291: Client evening_0 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000292: Client evening_15 booked seat 3 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000293: Client evening_3 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000294: Client evening_49 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000295: Client evening_51 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000296: Client evening_59 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000297: Client evening_25 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000298: Client evening_11 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000299: Client evening_23 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,221 - Thread-1 (_async_log_writer) - Booking BK000300: Client evening_44 booked seat 4 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000301: Client evening_45 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000302: Client evening_39 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000303: Client evening_57 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000304: Client evening_18 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000305: Client evening_16 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000306: Client evening_5 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000307: Client evening_24 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000308: Client evening_19 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000309: Client evening_41 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,241 - Thread-1 (_async_log_writer) - Booking BK000310: Client evening_4 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,273 - Thread-1 (_async_log_writer) - Booking BK000311: Client evening_46 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,273 - Thread-1 (_async_log_writer) - Booking BK000312: Client evening_47 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,274 - Thread-1 (_async_log_writer) - Booking BK000313: Client evening_30 booked seat 5 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,274 - Thread-1 (_async_log_writer) - Booking BK000314: Client evening_55 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,275 - Thread-1 (_async_log_writer) - Booking BK000315: Client evening_50 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,275 - Thread-1 (_async_log_writer) - Booking BK000316: Client evening_6 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,275 - Thread-1 (_async_log_writer) - Booking BK000317: Client evening_1 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,275 - Thread-1 (_async_log_writer) - Booking BK000318: Client evening_42 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,275 - Thread-1 (_async_log_writer) - Booking BK000319: Client evening_8 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,276 - Thread-1 (_async_log_writer) - Booking BK000320: Client evening_54 booked seat 2 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,276 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000151 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,276 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000142 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,277 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000309 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,277 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000207 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,278 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000275 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,278 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000177 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,279 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000148 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,279 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000225 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,279 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000241 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,279 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000265 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,280 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000175 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,280 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000236 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,281 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000144 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,281 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000141 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,281 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000266 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,281 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000206 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,281 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000203 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,281 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000226 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,281 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000270 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,281 - Thread-1 (_async_log_writer) - Cancellation: Booking BK000174 removed from database (bus 0 not found or other issue)
+2025-10-06 12:42:14,288 - Thread-1 (_async_log_writer) - Booking BK000321: Client burst_client_1 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,289 - Thread-1 (_async_log_writer) - Booking BK000322: Client burst_client_3 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,290 - Thread-1 (_async_log_writer) - Booking BK000323: Client burst_client_0 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000324: Client burst_client_2 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000325: Client burst_client_4 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000326: Client burst_client_5 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000327: Client burst_client_6 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000328: Client burst_client_7 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000329: Client burst_client_8 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000330: Client burst_client_9 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000331: Client burst_client_10 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000332: Client burst_client_11 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:42:14,291 - Thread-1 (_async_log_writer) - Booking BK000333: Client burst_client_17 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:42:14,292 - Thread-1 (_async_log_writer) - Booking BK000334: Client burst_client_18 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:42:14,292 - Thread-1 (_async_log_writer) - Booking BK000335: Client burst_client_12 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:42:14,292 - Thread-1 (_async_log_writer) - Booking BK000336: Client burst_client_16 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:42:14,292 - Thread-1 (_async_log_writer) - Booking BK000337: Client burst_client_14 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:42:14,292 - Thread-1 (_async_log_writer) - Booking BK000338: Client burst_client_24 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:42:14,292 - Thread-1 (_async_log_writer) - Booking BK000339: Client burst_client_27 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:42:14,293 - Thread-1 (_async_log_writer) - Booking BK000340: Client burst_client_15 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:42:14,293 - Thread-1 (_async_log_writer) - Booking BK000341: Client burst_client_34 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000342: Client burst_client_43 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000343: Client burst_client_41 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000344: Client burst_client_40 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000345: Client burst_client_42 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000346: Client burst_client_19 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000347: Client burst_client_20 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000348: Client burst_client_13 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000349: Client burst_client_32 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000350: Client burst_client_36 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000351: Client burst_client_56 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000352: Client burst_client_33 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000353: Client burst_client_35 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000354: Client burst_client_29 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000355: Client burst_client_44 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:42:14,294 - Thread-1 (_async_log_writer) - Booking BK000356: Client burst_client_45 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:42:14,295 - Thread-1 (_async_log_writer) - Booking BK000357: Client burst_client_49 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:42:14,295 - Thread-1 (_async_log_writer) - Booking BK000358: Client burst_client_38 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:42:14,295 - Thread-1 (_async_log_writer) - Booking BK000359: Client burst_client_22 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:42:14,295 - Thread-1 (_async_log_writer) - Booking BK000360: Client burst_client_25 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:42:14,295 - Thread-1 (_async_log_writer) - Booking BK000361: Client burst_client_30 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,295 - Thread-1 (_async_log_writer) - Booking BK000362: Client burst_client_31 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,295 - Thread-1 (_async_log_writer) - Booking BK000363: Client burst_client_26 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:42:14,295 - Thread-1 (_async_log_writer) - Booking BK000364: Client burst_client_23 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:42:14,297 - Thread-1 (_async_log_writer) - Booking BK000365: Client burst_client_28 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:42:14,299 - Thread-1 (_async_log_writer) - Booking BK000366: Client burst_client_39 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:42:14,299 - Thread-1 (_async_log_writer) - Booking BK000367: Client burst_client_47 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:42:14,299 - Thread-1 (_async_log_writer) - Booking BK000368: Client burst_client_51 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:42:14,299 - Thread-1 (_async_log_writer) - Booking BK000369: Client burst_client_37 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000370: Client burst_client_21 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000371: Client burst_client_48 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000372: Client burst_client_46 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000373: Client burst_client_52 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000374: Client burst_client_50 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000375: Client burst_client_64 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000376: Client burst_client_66 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000377: Client burst_client_65 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000378: Client burst_client_53 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000379: Client burst_client_80 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000380: Client burst_client_57 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000381: Client burst_client_55 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000382: Client burst_client_68 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000383: Client burst_client_63 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000384: Client burst_client_54 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000385: Client burst_client_61 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000386: Client burst_client_59 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000387: Client burst_client_60 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000388: Client burst_client_79 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000389: Client burst_client_70 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000390: Client burst_client_58 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000391: Client burst_client_62 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000392: Client burst_client_69 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000393: Client burst_client_81 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000394: Client burst_client_71 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000395: Client burst_client_72 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000396: Client burst_client_73 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000397: Client burst_client_75 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000398: Client burst_client_74 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000399: Client burst_client_76 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000400: Client burst_client_77 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000401: Client burst_client_89 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000402: Client burst_client_78 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000403: Client burst_client_67 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000404: Client burst_client_82 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000405: Client burst_client_85 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000406: Client burst_client_130 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000407: Client burst_client_87 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:42:14,300 - Thread-1 (_async_log_writer) - Booking BK000408: Client burst_client_88 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000409: Client burst_client_84 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000410: Client burst_client_86 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000411: Client burst_client_94 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000412: Client burst_client_95 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000413: Client burst_client_100 booked seat 1 on bus 0 for 2025-10-16
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000414: Client burst_client_101 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000415: Client burst_client_102 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000416: Client burst_client_104 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000417: Client burst_client_105 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000418: Client burst_client_106 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000419: Client burst_client_107 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000420: Client burst_client_108 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000421: Client burst_client_109 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000422: Client burst_client_110 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000423: Client burst_client_111 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000424: Client burst_client_112 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000425: Client burst_client_113 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000426: Client burst_client_114 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000427: Client burst_client_90 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000428: Client burst_client_115 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000429: Client burst_client_116 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000430: Client burst_client_119 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000431: Client burst_client_120 booked seat 1 on bus 0 for 2025-10-06
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000432: Client burst_client_121 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000433: Client burst_client_97 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000434: Client burst_client_98 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000435: Client burst_client_123 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000436: Client burst_client_124 booked seat 1 on bus 0 for 2025-10-10
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000437: Client burst_client_125 booked seat 1 on bus 0 for 2025-10-11
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000438: Client burst_client_103 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000439: Client burst_client_132 booked seat 1 on bus 0 for 2025-10-18
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000440: Client burst_client_134 booked seat 1 on bus 0 for 2025-10-20
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000441: Client burst_client_133 booked seat 1 on bus 0 for 2025-10-19
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000442: Client burst_client_135 booked seat 1 on bus 0 for 2025-10-21
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000443: Client burst_client_136 booked seat 1 on bus 0 for 2025-10-22
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000444: Client burst_client_137 booked seat 1 on bus 0 for 2025-10-23
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000445: Client burst_client_138 booked seat 1 on bus 0 for 2025-10-24
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000446: Client burst_client_139 booked seat 1 on bus 0 for 2025-10-25
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000447: Client burst_client_140 booked seat 1 on bus 0 for 2025-10-26
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000448: Client burst_client_141 booked seat 1 on bus 0 for 2025-10-27
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000449: Client burst_client_142 booked seat 1 on bus 0 for 2025-10-28
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000450: Client burst_client_143 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000451: Client burst_client_144 booked seat 1 on bus 0 for 2025-10-30
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000452: Client burst_client_99 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000453: Client burst_client_146 booked seat 1 on bus 0 for 2025-11-01
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000454: Client burst_client_147 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000455: Client burst_client_131 booked seat 1 on bus 0 for 2025-10-17
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000456: Client burst_client_117 booked seat 1 on bus 0 for 2025-11-02
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000457: Client burst_client_118 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000458: Client burst_client_149 booked seat 1 on bus 0 for 2025-11-04
+2025-10-06 12:42:14,301 - Thread-1 (_async_log_writer) - Booking BK000459: Client burst_client_122 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000460: Client burst_client_148 booked seat 1 on bus 0 for 2025-11-03
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000461: Client burst_client_92 booked seat 1 on bus 0 for 2025-10-08
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000462: Client burst_client_93 booked seat 1 on bus 0 for 2025-10-09
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000463: Client burst_client_91 booked seat 1 on bus 0 for 2025-10-07
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000464: Client burst_client_96 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000465: Client burst_client_83 booked seat 1 on bus 0 for 2025-10-29
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000466: Client burst_client_145 booked seat 1 on bus 0 for 2025-10-31
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000467: Client burst_client_126 booked seat 1 on bus 0 for 2025-10-12
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000468: Client burst_client_128 booked seat 1 on bus 0 for 2025-10-14
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000469: Client burst_client_127 booked seat 1 on bus 0 for 2025-10-13
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Booking BK000470: Client burst_client_129 booked seat 1 on bus 0 for 2025-10-15
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Updated booking BK000470: Bus 0 Seat 1 → Bus 10 Seat 1
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Updated booking BK000320: Bus 0 Seat 2 → Bus 10 Seat 2
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Updated booking BK000292: Bus 0 Seat 3 → Bus 10 Seat 3
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Updated booking BK000300: Bus 0 Seat 4 → Bus 10 Seat 4
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Updated booking BK000313: Bus 0 Seat 5 → Bus 10 Seat 5
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 0(5 bookings) and 1(0 bookings) into bus 10
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 2(0 bookings) and 3(0 bookings) into bus 11
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 4(0 bookings) and 5(0 bookings) into bus 12
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 6(0 bookings) and 7(0 bookings) into bus 13
+2025-10-06 12:42:14,302 - Thread-1 (_async_log_writer) - Admin admin: Merged buses 8(0 bookings) and 9(0 bookings) into bus 14
+2025-10-06 12:43:31,787 - Thread-1 (_async_log_writer) - Booking BK000471: Client BC01 booked seat 1 on bus 10 for 20251007
+2025-10-06 12:44:00,050 - Thread-1 (_async_log_writer) - Booking BK000471: Client BD02 booked seat 1 on bus 10 for 20251007
+2025-10-12 16:59:35,249 - Thread-1 (_async_log_writer) - Initialized bus 0
+2025-10-12 16:59:35,253 - Thread-1 (_async_log_writer) - Initialized bus 1
+2025-10-12 16:59:35,253 - Thread-1 (_async_log_writer) - Initialized bus 2
+2025-10-12 16:59:35,253 - Thread-1 (_async_log_writer) - Initialized bus 3
+2025-10-12 16:59:35,253 - Thread-1 (_async_log_writer) - Initialized bus 4
+2025-10-12 16:59:35,253 - Thread-1 (_async_log_writer) - Initialized bus 5
+2025-10-12 16:59:35,253 - Thread-1 (_async_log_writer) - Initialized bus 6
+2025-10-12 16:59:35,253 - Thread-1 (_async_log_writer) - Initialized bus 7
+2025-10-12 16:59:35,253 - Thread-1 (_async_log_writer) - Initialized bus 8
+2025-10-12 16:59:35,253 - Thread-1 (_async_log_writer) - Initialized bus 9
+2025-10-12 16:59:35,442 - MainThread - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.102:5000
+2025-10-12 16:59:35,442 - MainThread - [33mPress CTRL+C to quit[0m
+2025-10-12 16:59:35,443 - MainThread -  * Restarting with stat
+2025-10-12 16:59:35,568 - Thread-1 (_async_log_writer) - Initialized bus 0
+2025-10-12 16:59:35,568 - Thread-1 (_async_log_writer) - Initialized bus 1
+2025-10-12 16:59:35,568 - Thread-1 (_async_log_writer) - Initialized bus 2
+2025-10-12 16:59:35,568 - Thread-1 (_async_log_writer) - Initialized bus 3
+2025-10-12 16:59:35,568 - Thread-1 (_async_log_writer) - Initialized bus 4
+2025-10-12 16:59:35,568 - Thread-1 (_async_log_writer) - Initialized bus 5
+2025-10-12 16:59:35,568 - Thread-1 (_async_log_writer) - Initialized bus 6
+2025-10-12 16:59:35,568 - Thread-1 (_async_log_writer) - Initialized bus 7
+2025-10-12 16:59:35,569 - Thread-1 (_async_log_writer) - Initialized bus 8
+2025-10-12 16:59:35,569 - Thread-1 (_async_log_writer) - Initialized bus 9
+2025-10-12 16:59:35,589 - MainThread -  * Debugger is active!
+2025-10-12 16:59:35,972 - MainThread -  * Debugger PIN: 803-580-376
+2025-10-12 17:00:02,331 - Thread-4 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:02] "GET / HTTP/1.1" 200 -
+2025-10-12 17:00:03,368 - Thread-5 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-12 17:00:08,125 - Thread-6 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:08] "GET /admin/login HTTP/1.1" 200 -
+2025-10-12 17:00:25,245 - Thread-8 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:25] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2025-10-12 17:00:25,266 - Thread-9 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:25] "GET /admin/dashboard HTTP/1.1" 200 -
+2025-10-12 17:00:30,780 - Thread-10 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:30] "GET /admin/buses HTTP/1.1" 200 -
+2025-10-12 17:00:33,480 - Thread-11 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:33] "GET /admin/bookings HTTP/1.1" 200 -
+2025-10-12 17:00:36,566 - Thread-13 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:36] "GET /admin/buses HTTP/1.1" 200 -
+2025-10-12 17:00:37,226 - Thread-14 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:37] "GET /admin/bookings HTTP/1.1" 200 -
+2025-10-12 17:00:39,226 - Thread-17 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:39] "GET /admin/analytics HTTP/1.1" 200 -
+2025-10-12 17:00:43,097 - Thread-18 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:43] "GET /admin/dashboard HTTP/1.1" 200 -
+2025-10-12 17:00:46,462 - Thread-20 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:46] "GET /admin/buses HTTP/1.1" 200 -
+2025-10-12 17:00:47,481 - Thread-21 (process_request_thread) - 127.0.0.1 - - [12/Oct/2025 17:00:47] "GET /admin/analytics HTTP/1.1" 200 -

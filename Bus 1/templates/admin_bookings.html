@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}All Bookings - BusHub Admin{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2 flex items-center">
+        <i class="fas fa-ticket-alt text-primary mr-3"></i>
+        All Bookings
+    </h1>
+    <p class="text-gray-600">Complete booking records and history</p>
+</div>
+
+<!-- Stats -->
+<div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <div class="flex items-center justify-between">
+        <div>
+            <p class="text-gray-600 mb-1">Total Bookings</p>
+            <p class="text-4xl font-bold text-primary">{{ total_bookings }}</p>
+        </div>
+        <div class="bg-primary bg-opacity-10 p-6 rounded-full">
+            <i class="fas fa-ticket-alt text-5xl text-primary"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Bookings Table -->
+<div class="bg-white rounded-xl shadow-lg overflow-hidden">
+    <div class="overflow-x-auto">
+        <table class="w-full">
+            <thead class="bg-gradient-to-r from-primary to-secondary text-white">
+                <tr>
+                    <th class="px-6 py-4 text-left font-semibold">Booking ID</th>
+                    <th class="px-6 py-4 text-left font-semibold">Client ID</th>
+                    <th class="px-6 py-4 text-left font-semibold">Bus</th>
+                    <th class="px-6 py-4 text-left font-semibold">Seat</th>
+                    <th class="px-6 py-4 text-left font-semibold">Date</th>
+                    <th class="px-6 py-4 text-left font-semibold">Booking Time</th>
+                    <th class="px-6 py-4 text-left font-semibold">Status</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                {% for booking in bookings %}
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4">
+                        <span class="font-mono font-semibold text-primary">{{ booking.booking_id }}</span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-2 rounded-full mr-2">
+                                <i class="fas fa-user text-blue-600 text-sm"></i>
+                            </div>
+                            <span class="font-medium">{{ booking.client_id }}</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Bus {{ booking.bus_id }}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span class="font-semibold">{{ booking.seat }}</span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span class="text-gray-600">{{ booking.date }}</span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span class="text-sm text-gray-500">{{ booking.booking_time[:19] if booking.booking_time != 'Unknown' else 'N/A' }}</span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-check-circle mr-1"></i> Confirmed
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Pagination -->
+{% if total_pages > 1 %}
+<div class="flex justify-center mt-8 space-x-2">
+    {% if page > 1 %}
+    <a href="{{ url_for('admin_bookings', page=page-1) }}" class="bg-white px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    {% endif %}
+    
+    {% for p in range(1, total_pages + 1) %}
+        {% if p == page %}
+        <span class="bg-primary text-white px-4 py-2 rounded-lg font-semibold">{{ p }}</span>
+        {% elif p == 1 or p == total_pages or (p >= page - 2 and p <= page + 2) %}
+        <a href="{{ url_for('admin_bookings', page=p) }}" class="bg-white px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition">
+            {{ p }}
+        </a>
+        {% elif p == page - 3 or p == page + 3 %}
+        <span class="px-2 py-2">...</span>
+        {% endif %}
+    {% endfor %}
+    
+    {% if page < total_pages %}
+    <a href="{{ url_for('admin_bookings', page=page+1) }}" class="bg-white px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+    {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}

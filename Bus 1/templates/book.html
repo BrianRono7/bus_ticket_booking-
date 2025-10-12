@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+
+{% block title %}Book a Seat - BusHub{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2">Book Your Seat</h1>
+    <p class="text-gray-600">Select your travel date and choose your preferred seat.</p>
+</div>
+
+<!-- Booking Steps -->
+<div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+    <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center space-x-2" id="step1">
+            <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">1</div>
+            <span class="font-medium text-gray-800">Select Date</span>
+        </div>
+        <div class="flex-1 h-1 bg-gray-200 mx-4"></div>
+        <div class="flex items-center space-x-2" id="step2">
+            <div class="bg-gray-200 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center font-bold">2</div>
+            <span class="font-medium text-gray-500">Choose Bus</span>
+        </div>
+        <div class="flex-1 h-1 bg-gray-200 mx-4"></div>
+        <div class="flex items-center space-x-2" id="step3">
+            <div class="bg-gray-200 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center font-bold">3</div>
+            <span class="font-medium text-gray-500">Select Seat</span>
+        </div>
+    </div>
+
+    <!-- Step 1: Date Selection -->
+    <div id="dateSelection" class="step-content">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+            <i class="fas fa-calendar-alt text-primary mr-2"></i> Select Travel Date
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+            {% for date in dates[:10] %}
+            <button onclick="selectDate('{{ date }}')" class="date-btn border-2 border-gray-200 rounded-lg p-4 hover:border-primary hover:bg-blue-50 transition text-center">
+                <div class="text-sm text-gray-600">{{ date[:10] }}</div>
+                <div class="font-bold text-gray-800 mt-1">{{ date[8:] }}</div>
+            </button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Step 2: Bus Selection -->
+    <div id="busSelection" class="step-content hidden">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+            <i class="fas fa-bus text-primary mr-2"></i> Choose Your Bus
+        </h2>
+        <div id="busList" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Buses will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Step 3: Seat Selection -->
+    <div id="seatSelection" class="step-content hidden">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-800">
+                <i class="fas fa-chair text-primary mr-2"></i> Select Your Seat
+            </h2>
+            <button onclick="goToStep(2)" class="text-primary hover:text-secondary transition">
+                <i class="fas fa-arrow-left mr-1"></i> Change Bus
+            </button>
+        </div>
+        
+        <!-- Legend -->
+        <div class="flex items-center space-x-6 mb-6 text-sm">
+            <div class="flex items-center">
+                <div class="w-8 h-8 bg-green-500 rounded mr-2"></div>
+                <span>Available</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-8 h-8 bg-red-500 rounded mr-2"></div>
+                <span>Booked</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-8 h-8 bg-blue-500 rounded mr-2 ring-4 ring-blue-300"></div>
+                <span>Selected</span>
+            </div>
+        </div>
+
+        <!-- Seat Map -->
+        <div id="seatMap" class="bg-gray-50 rounded-lg p-6">
+            <!-- Seats will be loaded here -->
+        </div>
+
+        <!-- Booking Summary -->
+        <div id="bookingSummary" class="hidden mt-6 bg-gradient-to-r from-primary to-secondary text-white rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Booking Summary</h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div><strong>Date:</strong> <span id="summaryDate"></span></div>
+                <div><strong>Bus:</strong> <span id="summaryBus"></span></div>
+                <div><strong>Seat:</strong> <span id="summarySeat"></span></div>
+                <div><strong>Route:</strong> Nakuru-Nairobi</div>
+            </div>
+            <button onclick="confirmBooking()" class="w-full bg-white text-primary font-bold py-3 rounded-lg mt-4 hover:shadow-lg transition">
+                <i class="fas fa-check-circle mr-2"></i> Confirm Booking
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 animate-slide-up">
+        <div class="text-center">
+            <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check-circle text-5xl text-green-500"></i>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Booking Confirmed!</h2>
+            <p class="text-gray-600 mb-6">Your seat has been successfully booked.</p>
+            
+            <div id="bookingDetails" class="bg-gray-50 rounded-lg p-4 mb-6 text-left">
+                <!-- Details will be filled here -->
+            </div>
+
+            <div class="flex space-x-3">
+                <a href="{{ url_for('dashboard') }}" class="flex-1 bg-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-300 transition text-center">
+                    Dashboard
+                </a>
+                <a href="{{ url_for('book') }}" class="flex-1 bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition text-center">
+                    Book Another
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let selectedDate = '';
+let selectedBus = '';
+let selectedSeat = '';
+let buses = [];
+
+function goToStep(step) {
+    // Update step indicators
+    for (let i = 1; i <= 3; i++) {
+        const stepEl = document.getElementById(`step${i}`);
+        const circle = stepEl.querySelector('div');
+        const text = stepEl.querySelector('span');
+        
+        if (i <= step) {
+            circle.classList.remove('bg-gray-200', 'text-gray-500');
+            circle.classList.add('bg-primary', 'text-white');
+            text.classList.remove('text-gray-500');
+            text.classList.add('text-gray-800');
+        } else {
+            circle.classList.remove('bg-primary', 'text-white');
+            circle.classList.add('bg-gray-200', 'text-gray-500');
+            text.classList.remove('text-gray-800');
+            text.classList.add('text-gray-500');
+        }
+    }
+
+    // Show correct content
+    document.querySelectorAll('.step-content').forEach(el => el.classList.add('hidden'));
+    
+    if (step === 1) document.getElementById('dateSelection').classList.remove('hidden');
+    else if (step === 2) document.getElementById('busSelection').classList.remove('hidden');
+    else if (step === 3) document.getElementById('seatSelection').classList.remove('hidden');
+}
+
+function selectDate(date) {
+    selectedDate = date;
+    
+    // Highlight selected date
+    document.querySelectorAll('.date-btn').forEach(btn => {
+        btn.classList.remove('border-primary', 'bg-blue-50');
+    });
+    event.target.closest('.date-btn').classList.add('border-primary', 'bg-blue-50');
+    
+    // Load buses
+    fetch(`/api/buses/${date}`)
+        .then(response => response.json())
+        .then(data => {
+            buses = data.buses;
+            displayBuses(data.buses);
+            setTimeout(() => goToStep(2), 300);
+        });
+}
+
+function displayBuses(buses) {
+    const busList = document.getElementById('busList');
+    busList.innerHTML = buses.map(bus => `
+        <button onclick="selectBus(${bus.bus_id})" class="bus-card border-2 border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition text-left">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-3">
+                        <i class="fas fa-bus text-primary text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Bus ${bus.bus_id}</h3>
+                        <p class="text-sm text-gray-600">${bus.route}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="text-2xl font-bold text-primary">${bus.available_seats}</div>
+                    <div class="text-sm text-gray-600">Seats Available</div>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm text-gray-600">Load</div>
+                    <div class="text-lg font-bold ${bus.load_factor > 0.7 ? 'text-red-500' : 'text-green-500'}">
+                        ${(bus.load_factor * 100).toFixed(0)}%
+                    </div>
+                </div>
+            </div>
+        </button>
+    `).join('');
+}
+
+function selectBus(busId) {
+    selectedBus = busId;
+    
+    // Load seats
+    fetch(`/api/seats/${busId}/${selectedDate}`)
+        .then(response => response.json())
+        .then(data => {
+            displaySeats(data.seats);
+            goToStep(3);
+        });
+}
+
+function displaySeats(seats) {
+    const seatMap = document.getElementById('seatMap');
+    const rows = Math.ceil(seats.length / 4);
+    
+    let html = '<div class="space-y-2">';
+    for (let i = 0; i < rows; i++) {
+        html += '<div class="grid grid-cols-4 gap-2">';
+        for (let j = 0; j < 4 && (i * 4 + j) < seats.length; j++) {
+            const seat = seats[i * 4 + j];
+            const available = seat.available;
+            const bgColor = available ? 'bg-green-500 hover:bg-green-600 cursor-pointer' : 'bg-red-500 cursor-not-allowed opacity-50';
+            
+            html += `
+                <button 
+                    onclick="${available ? `selectSeat(${seat.number})` : 'return false'}"
+                    class="seat-btn ${bgColor} text-white p-4 rounded-lg transition font-bold text-center"
+                    ${!available ? 'disabled' : ''}
+                >
+                    <div class="text-xs mb-1">Seat</div>
+                    <div class="text-lg">${seat.number}</div>
+                </button>
+            `;
+        }
+        html += '</div>';
+    }
+    html += '</div>';
+    
+    seatMap.innerHTML = html;
+}
+
+function selectSeat(seatNumber) {
+    selectedSeat = seatNumber;
+    
+    // Update seat styling
+    document.querySelectorAll('.seat-btn:not([disabled])').forEach(btn => {
+        btn.classList.remove('ring-4', 'ring-blue-300', 'bg-blue-500');
+        btn.classList.add('bg-green-500');
+    });
+    
+    event.target.closest('.seat-btn').classList.remove('bg-green-500');
+    event.target.closest('.seat-btn').classList.add('bg-blue-500', 'ring-4', 'ring-blue-300');
+    
+    // Show summary
+    document.getElementById('summaryDate').textContent = selectedDate;
+    document.getElementById('summaryBus').textContent = `Bus ${selectedBus}`;
+    document.getElementById('summarySeat').textContent = seatNumber;
+    document.getElementById('bookingSummary').classList.remove('hidden');
+}
+
+function confirmBooking() {
+    const btn = event.target;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+    btn.disabled = true;
+    
+    fetch('/book', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            date: selectedDate,
+            bus_id: selectedBus,
+            seat_number: selectedSeat
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            // Show success modal
+            document.getElementById('bookingDetails').innerHTML = `
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Booking ID:</span>
+                        <span class="font-bold">${data.booking_id}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Bus:</span>
+                        <span class="font-bold">Bus ${data.bus_id}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Seat:</span>
+                        <span class="font-bold">${data.seat_number}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Date:</span>
+                        <span class="font-bold">${data.date}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Route:</span>
+                        <span class="font-bold">${data.route}</span>
+                    </div>
+                </div>
+            `;
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('successModal').classList.add('flex');
+        } else {
+            alert('Booking failed: ' + data.message);
+            btn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Confirm Booking';
+            btn.disabled = false;
+        }
+    })
+    .catch(error => {
+        alert('Error: ' + error);
+        btn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Confirm Booking';
+        btn.disabled = false;
+    });
+}
+</script>
+{% endblock %}

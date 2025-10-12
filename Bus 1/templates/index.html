@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}BusHub - Smart Bus Booking System{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="gradient-bg rounded-3xl p-12 mb-12 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full -mr-32 -mt-32 animate-float"></div>
+    <div class="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-10 rounded-full -ml-24 -mb-24 animate-float" style="animation-delay: 1.5s;"></div>
+    
+    <div class="relative z-10 max-w-3xl">
+        <h1 class="text-5xl font-bold mb-4 animate-fade-in">
+            Welcome to BusHub
+        </h1>
+        <p class="text-xl mb-8 text-gray-100 animate-slide-up">
+            Experience seamless bus booking with real-time seat availability, smart auto-scaling, and instant confirmations.
+        </p>
+        <div class="flex space-x-4">
+            <a href="{{ url_for('login') }}" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition">
+                <i class="fas fa-ticket-alt mr-2"></i> Book Your Seat
+            </a>
+            <a href="#features" class="glass px-8 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-20 transition">
+                <i class="fas fa-info-circle mr-2"></i> Learn More
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Live Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div class="bg-white rounded-xl p-6 shadow-lg card-hover" id="stats-bookings">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-500 text-sm font-medium uppercase">Total Bookings</p>
+                <p class="text-3xl font-bold text-primary mt-2">{{ stats.total_bookings }}</p>
+            </div>
+            <div class="bg-blue-100 p-4 rounded-full">
+                <i class="fas fa-ticket-alt text-3xl text-primary"></i>
+            </div>
+        </div>
+        <div class="mt-4 text-sm text-green-600 flex items-center">
+            <i class="fas fa-arrow-up mr-1"></i> Live tracking
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-lg card-hover" id="stats-buses">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-500 text-sm font-medium uppercase">Active Buses</p>
+                <p class="text-3xl font-bold text-secondary mt-2">{{ stats.active_buses }}</p>
+            </div>
+            <div class="bg-purple-100 p-4 rounded-full">
+                <i class="fas fa-bus text-3xl text-secondary"></i>
+            </div>
+        </div>
+        <div class="mt-4 text-sm text-blue-600 flex items-center">
+            <i class="fas fa-sync-alt mr-1"></i> Auto-scaling enabled
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-lg card-hover" id="stats-seats">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-500 text-sm font-medium uppercase">Available Seats</p>
+                <p class="text-3xl font-bold text-accent mt-2">{{ stats.available_seats }}</p>
+            </div>
+            <div class="bg-pink-100 p-4 rounded-full">
+                <i class="fas fa-chair text-3xl text-accent"></i>
+            </div>
+        </div>
+        <div class="mt-4 text-sm text-purple-600 flex items-center">
+            <i class="fas fa-clock mr-1"></i> Real-time updates
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div id="features" class="mb-12">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Why Choose BusHub?</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-bolt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Instant Booking</h3>
+            <p class="text-gray-600">Book your seat in seconds with our lightning-fast booking system. No delays, no hassle.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-purple-500 to-purple-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-shield-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Secure & Reliable</h3>
+            <p class="text-gray-600">Your bookings are protected with enterprise-grade security and real-time seat locking.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-pink-500 to-pink-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-chart-line text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Smart Auto-Scaling</h3>
+            <p class="text-gray-600">Our system automatically adjusts fleet size based on demand for optimal efficiency.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-green-500 to-green-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-clock text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Real-Time Updates</h3>
+            <p class="text-gray-600">Get instant updates on seat availability, bus status, and booking confirmations.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-mobile-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Mobile Friendly</h3>
+            <p class="text-gray-600">Book from anywhere, anytime with our fully responsive mobile-optimized interface.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-red-500 to-red-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-undo text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Easy Cancellation</h3>
+            <p class="text-gray-600">Cancel your booking anytime with just one click. Simple and straightforward.</p>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="bg-gradient-to-r from-primary to-secondary rounded-3xl p-12 text-white text-center">
+    <h2 class="text-4xl font-bold mb-4">Ready to Start Your Journey?</h2>
+    <p class="text-xl mb-8 text-gray-100">Join thousands of satisfied travelers who trust BusHub for their transportation needs.</p>
+    <a href="{{ url_for('login') }}" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition text-lg">
+        <i class="fas fa-rocket mr-2"></i> Get Started Now
+    </a>
+</div>
+
+<script>
+    // Update stats in real-time
+    function updateStats() {
+        fetch('/api/stats')
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector('#stats-bookings p.text-3xl').textContent = data.total_bookings;
+                document.querySelector('#stats-buses p.text-3xl').textContent = data.active_buses;
+                document.querySelector('#stats-seats p.text-3xl').textContent = data.available_seats;
+            })
+            .catch(error => console.error('Error updating stats:', error));
+    }
+
+    // Update stats every 10 seconds
+    setInterval(updateStats, 10000);
+</script>
+{% endblock %}

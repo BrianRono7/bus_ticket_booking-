@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - BusHub{% endblock %}
+
+{% block content %}
+<!-- Welcome Section -->
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2 animate-fade-in">
+        Welcome, {{ client_id }}! 👋
+    </h1>
+    <p class="text-gray-600">Manage your bookings and explore available buses.</p>
+</div>
+
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white shadow-lg card-hover">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <p class="text-blue-100 text-sm font-medium">My Bookings</p>
+                <p class="text-4xl font-bold">{{ stats.my_bookings }}</p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                <i class="fas fa-ticket-alt text-3xl"></i>
+            </div>
+        </div>
+        <a href="{{ url_for('my_bookings') }}" class="text-sm text-blue-100 hover:text-white transition flex items-center">
+            View all bookings <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+
+    <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white shadow-lg card-hover">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <p class="text-purple-100 text-sm font-medium">System Load</p>
+                <p class="text-4xl font-bold">{{ "%.0f"|format(stats.system_load * 100) }}%</p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                <i class="fas fa-chart-line text-3xl"></i>
+            </div>
+        </div>
+        <div class="text-sm text-purple-100">
+            <i class="fas fa-info-circle mr-1"></i> Current demand level
+        </div>
+    </div>
+
+    <div class="bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl p-6 text-white shadow-lg card-hover">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <p class="text-pink-100 text-sm font-medium">Active Buses</p>
+                <p class="text-4xl font-bold">{{ stats.active_buses }}</p>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                <i class="fas fa-bus text-3xl"></i>
+            </div>
+        </div>
+        <div class="text-sm text-pink-100">
+            <i class="fas fa-sync-alt mr-1"></i> Auto-scaling active
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+        <i class="fas fa-bolt text-primary mr-2"></i> Quick Actions
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="{{ url_for('book') }}" class="bg-gradient-to-r from-primary to-secondary text-white p-6 rounded-xl hover:shadow-xl transform hover:scale-105 transition flex items-center justify-between group">
+            <div>
+                <h3 class="text-xl font-bold mb-2">Book a New Seat</h3>
+                <p class="text-blue-100">Find and book your next journey</p>
+            </div>
+            <i class="fas fa-arrow-right text-3xl group-hover:translate-x-2 transition"></i>
+        </a>
+
+        <a href="{{ url_for('my_bookings') }}" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-xl hover:shadow-xl transform hover:scale-105 transition flex items-center justify-between group">
+            <div>
+                <h3 class="text-xl font-bold mb-2">View My Bookings</h3>
+                <p class="text-purple-100">Manage your existing bookings</p>
+            </div>
+            <i class="fas fa-arrow-right text-3xl group-hover:translate-x-2 transition"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Recent Bookings -->
+<div class="bg-white rounded-xl shadow-lg p-6">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">
+            <i class="fas fa-history text-primary mr-2"></i> Recent Bookings
+        </h2>
+        {% if bookings %}
+        <a href="{{ url_for('my_bookings') }}" class="text-primary hover:text-secondary transition font-medium">
+            View All <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+        {% endif %}
+    </div>
+
+    {% if bookings %}
+    <div class="space-y-4">
+        {% for booking in bookings[:5] %}
+        <div class="border border-gray-200 rounded-lg p-4 hover:border-primary hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-full">
+                        <i class="fas fa-bus text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">
+                            Booking #{{ booking.booking_id }}
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            Bus {{ booking.bus_id }} • Seat {{ booking.seat }} • {{ booking.date }}
+                        </p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        <i class="fas fa-check-circle mr-1"></i> Confirmed
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-12">
+        <div class="bg-gray-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-ticket-alt text-4xl text-gray-400"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">No bookings yet</h3>
+        <p class="text-gray-600 mb-6">Start your journey by booking your first seat!</p>
+        <a href="{{ url_for('book') }}" class="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
+            <i class="fas fa-plus mr-2"></i> Book Now
+        </a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

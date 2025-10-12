@@ -50,8 +50,9 @@ ENABLE_PERFORMANCE_MONITORING = True
 ENABLE_ASYNC_LOGGING = True
 
 # Database Configuration (for future expansion)
-DB_TYPE = "memory"  # Options: "memory", "sqlite", "postgresql"
-DB_CONNECTION_STRING = None
+DB_TYPE = "sqlite"  # Change from "memory" to "sqlite"
+DB_CONNECTION_STRING = "bus_booking.db"
+ENABLE_DATABASE = True  # Add this flag
 
 # API Configuration (for future expansion)
 API_ENABLED = False

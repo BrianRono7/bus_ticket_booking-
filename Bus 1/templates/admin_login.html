@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Login - BusHub{% endblock %}
+
+{% block content %}
+<div class="min-h-[calc(100vh-200px)] flex items-center justify-center">
+    <div class="max-w-md w-full">
+        <!-- Card -->
+        <div class="bg-white rounded-2xl shadow-2xl p-8 animate-slide-up">
+            <!-- Icon -->
+            <div class="flex justify-center mb-6">
+                <div class="bg-gradient-to-br from-purple-500 to-pink-500 w-20 h-20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-user-shield text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Admin Portal</h2>
+            <p class="text-center text-gray-600 mb-8">Enter your credentials to access admin dashboard</p>
+
+            {% if error %}
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded">
+                <div class="flex items-center">
+                    <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
+                    <p class="text-red-700">{{ error }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Form -->
+            <form method="POST" action="{{ url_for('admin_login') }}" class="space-y-6">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700 mb-2">
+                        <i class="fas fa-user mr-1"></i> Username
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        placeholder="Enter admin username"
+                        autofocus
+                    >
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                        <i class="fas fa-lock mr-1"></i> Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        placeholder="Enter admin password"
+                    >
+                </div>
+
+                <button 
+                    type="submit" 
+                    class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition"
+                >
+                    <i class="fas fa-sign-in-alt mr-2"></i> Access Admin Dashboard
+                </button>
+            </form>
+
+            <!-- Info Box -->
+            <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                <p class="text-sm text-gray-600 flex items-start">
+                    <i class="fas fa-info-circle text-gray-400 mr-2 mt-0.5"></i>
+                    <span>Default credentials: <strong>admin</strong> / <strong>admin123</strong></span>
+                </p>
+            </div>
+
+            <!-- Divider -->
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-4 bg-white text-gray-500">Or</span>
+                </div>
+            </div>
+
+            <!-- User Link -->
+            <div class="text-center">
+                <a href="{{ url_for('login') }}" class="text-purple-500 hover:text-pink-500 transition font-medium">
+                    <i class="fas fa-user mr-1"></i> Customer Login
+                </a>
+            </div>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="mt-6 bg-white rounded-lg p-4 shadow-md text-center">
+            <i class="fas fa-shield-alt text-purple-500 text-2xl mb-2"></i>
+            <p class="text-xs text-gray-600">Secured with enterprise-grade authentication</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Add smooth animation on form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const button = this.querySelector('button[type="submit"]');
+        button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Authenticating...';
+        button.disabled = true;
+    });
+</script>
+{% endblock %}

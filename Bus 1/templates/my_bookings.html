@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}My Bookings - BusHub{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2">My Bookings</h1>
+    <p class="text-gray-600">View and manage all your bus reservations</p>
+</div>
+
+{% if bookings %}
+<div class="bg-white rounded-xl shadow-lg overflow-hidden">
+    <div class="p-6 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="flex items-center justify-between">
+            <div>
+                <h2 class="text-2xl font-bold">Total Bookings: {{ bookings|length }}</h2>
+                <p class="text-blue-100">Manage your travel plans</p>
+            </div>
+            <i class="fas fa-ticket-alt text-5xl opacity-50"></i>
+        </div>
+    </div>
+
+    <div class="divide-y divide-gray-200">
+        {% for booking in bookings %}
+        <div class="p-6 hover:bg-gray-50 transition">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 flex-1">
+                    <div class="bg-gradient-to-br from-primary to-secondary p-4 rounded-xl text-white">
+                        <i class="fas fa-bus text-2xl"></i>
+                    </div>
+                    
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">{{ booking.booking_id }}</h3>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-check-circle mr-1"></i> Confirmed
+                            </span>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div>
+                                <p class="text-gray-500 mb-1"><i class="fas fa-bus mr-1"></i> Bus</p>
+                                <p class="font-semibold text-gray-800">Bus {{ booking.bus_id }}</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 mb-1"><i class="fas fa-chair mr-1"></i> Seat</p>
+                                <p class="font-semibold text-gray-800">Seat {{ booking.seat }}</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 mb-1"><i class="fas fa-calendar mr-1"></i> Date</p>
+                                <p class="font-semibold text-gray-800">{{ booking.date }}</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 mb-1"><i class="fas fa-clock mr-1"></i> Booked</p>
+                                <p class="font-semibold text-gray-800">{{ booking.booking_time[:19] if booking.booking_time != 'Unknown' else 'N/A' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ml-4">
+                    <button 
+                        onclick="cancelBooking('{{ booking.booking_id }}')" 
+                        class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition font-medium"
+                    >
+                        <i class="fas fa-times-circle mr-1"></i> Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="bg-white rounded-xl shadow-lg p-12 text-center">
+    <div class="bg-gray-100 w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="fas fa-ticket-alt text-6xl text-gray-400"></i>
+    </div>
+    <h2 class="text-3xl font-bold text-gray-800 mb-3">No Bookings Yet</h2>
+    <p class="text-gray-600 mb-8 max-w-md mx-auto">
+        You haven't made any bookings yet. Start your journey by booking your first seat!
+    </p>
+    <a href="{{ url_for('book') }}" class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition">
+        <i class="fas fa-plus-circle mr-2"></i> Book Your First Seat
+    </a>
+</div>
+{% endif %}
+
+<!-- Cancellation Modal -->
+<div id="cancelModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 animate-slide-up">
+        <div class="text-center mb-6">
+            <div class="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-exclamation-triangle text-4xl text-red-500"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Cancel Booking?</h2>
+            <p class="text-gray-600">Are you sure you want to cancel this booking?</p>
+        </div>
+
+        <div id="cancelDetails" class="bg-gray-50 rounded-lg p-4 mb-6 text-sm">
+            <!-- Details will be filled here -->
+        </div>
+
+        <div class="flex space-x-3">
+            <button 
+                onclick="closeModal()" 
+                class="flex-1 bg-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-300 transition"
+            >
+                Keep Booking
+            </button>
+            <button 
+                onclick="confirmCancel()" 
+                class="flex-1 bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition"
+                id="confirmCancelBtn"
+            >
+                Yes, Cancel It
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+let bookingToCancel = null;
+
+function cancelBooking(bookingId) {
+    bookingToCancel = bookingId;
+    
+    // Find booking details
+    const bookingElement = event.target.closest('.p-6');
+    const busId = bookingElement.querySelector('.font-semibold').textContent;
+    const seat = bookingElement.querySelectorAll('.font-semibold')[1].textContent;
+    const date = bookingElement.querySelectorAll('.font-semibold')[2].textContent;
+    
+    // Show details in modal
+    document.getElementById('cancelDetails').innerHTML = `
+        <div class="space-y-2">
+            <div class="flex justify-between">
+                <span class="text-gray-600">Booking ID:</span>
+                <span class="font-bold">${bookingId}</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Bus:</span>
+                <span class="font-bold">${busId}</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Seat:</span>
+                <span class="font-bold">${seat}</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Date:</span>
+                <span class="font-bold">${date}</span>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('cancelModal').classList.remove('hidden');
+    document.getElementById('cancelModal').classList.add('flex');
+}
+
+function closeModal() {
+    document.getElementById('cancelModal').classList.add('hidden');
+    document.getElementById('cancelModal').classList.remove('flex');
+    bookingToCancel = null;
+}
+
+function confirmCancel() {
+    const btn = document.getElementById('confirmCancelBtn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Cancelling...';
+    btn.disabled = true;
+    
+    fetch(`/cancel/${bookingToCancel}`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            location.reload();
+        } else {
+            alert('Failed to cancel booking: ' + data.message);
+            btn.innerHTML = 'Yes, Cancel It';
+            btn.disabled = false;
+        }
+    })
+    .catch(error => {
+        alert('Error: ' + error);
+        btn.innerHTML = 'Yes, Cancel It';
+        btn.disabled = false;
+    });
+}
+
+// Close modal when clicking outside
+document.getElementById('cancelModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+</script>
+{% endblock %}

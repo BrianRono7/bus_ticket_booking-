@@ -10,8 +10,9 @@ from admin import AdminOperations
 from config import (
     DEFAULT_SEATS_PER_BUS, DEFAULT_ROUTE, INITIAL_BUS_COUNT, MAX_BUS_COUNT,
     LOAD_THRESHOLD_HIGH, LOAD_THRESHOLD_LOW, SEAT_RESERVATION_TIMEOUT,
-    LOG_FILE, LOG_BATCH_SIZE, LOG_FLUSH_INTERVAL
+    LOG_FILE, LOG_BATCH_SIZE, LOG_FLUSH_INTERVAL, ENABLE_DATABASE
 )
+from database import DatabaseManager
 
 
 class BusBookingSystem:
@@ -44,6 +45,11 @@ class BusBookingSystem:
             batch_size=LOG_BATCH_SIZE,
             flush_interval=LOG_FLUSH_INTERVAL
         )
+        if ENABLE_DATABASE:
+            self.db = DatabaseManager()
+            self._load_from_database()
+        else:
+            self.db = None
         
         # Admin operations
         self.admin = AdminOperations(self)
@@ -65,19 +71,24 @@ class BusBookingSystem:
             return self.visitor_count
 
     def get_overall_load_factor(self) -> float:
-        """Calculate overall system load factor"""
-        total_seats = 0
-        booked_seats = 0
+        """Calculate overall system load factor across ALL dates"""
+        total_capacity = 0
+        unique_bookings = set()
 
         with self.system_lock:
             for bus in self.buses.values():
                 if bus.status == "active":
-                    total_seats += bus.total_seats
-                    booked_seats += sum(
-                        1 for client in bus.seats.values() if client is not None
-                    )
+                    total_capacity += bus.total_seats
+                    # Count unique (seat, date) combinations
+                    for seat, date in bus.departure_dates.items():
+                        if bus.seats[seat] is not None:
+                            unique_bookings.add((bus.bus_id, seat, date))
 
-        return booked_seats / total_seats if total_seats > 0 else 0
+        # For multi-date systems, you need to decide:
+        # Option 1: Load factor per time slot (divide by number of dates)
+        # Option 2: Average across all future dates
+        # Currently showing instantaneous load
+        return len(unique_bookings) / total_capacity if total_capacity > 0 else 0
 
     def add_buses_if_needed(self) -> int:
         """Add buses if load threshold is exceeded"""
@@ -199,13 +210,24 @@ class BusBookingSystem:
         with self.system_lock:
             self.booking_counter += 1
             booking_id = f"BK{self.booking_counter:06d}"
-            self.bookings_db[booking_id] = {
+            booking_data = {
+                "booking_id": booking_id,
                 "client_id": client_id,
                 "bus_id": bus_id,
                 "seat": seat,
                 "date": date,
                 "booking_time": datetime.now().isoformat()
             }
+            
+            # Store in memory
+            self.bookings_db[booking_id] = booking_data
+            
+            # Store in database if enabled
+            if self.db:
+                self.db.save_booking(booking_data)
+                # Also save bus seat assignment
+                self.db.save_bus_seat(bus_id, seat, client_id, date)
+            
             return booking_id
 
     def cancel_booking(self, booking_id: str, client_id: str) -> bool:
@@ -222,49 +244,9 @@ class BusBookingSystem:
             seat = booking["seat"]
             date = booking["date"]
 
-            # Handle both active and merged buses
-            if bus_id in self.buses:
-                bus = self.buses[bus_id]
-                
-                # If bus is merged, find the new bus this seat was transferred to
-                if bus.status == "merged":
-                    # Search in active buses for this client's booking with matching date
-                    for active_bus_id, active_bus in self.buses.items():
-                        if active_bus.status == "active":
-                            for active_seat, active_client in active_bus.seats.items():
-                                if (active_client == client_id and 
-                                    active_bus.departure_dates.get(active_seat) == date):
-                                    active_bus.release_seat(active_seat)
-                                    del self.bookings_db[booking_id]
-                                    self.logger.log(
-                                        f"Cancellation: Booking {booking_id} cancelled (transferred from merged bus {bus_id} to bus {active_bus_id}, seat {active_seat})"
-                                    )
-                                    return True
-                    
-                    # If we get here, the booking wasn't found in active buses
-                    # This can happen if the merge process didn't properly transfer the booking
-                    # or if there's a timing issue. Let's just remove the booking record.
-                    del self.bookings_db[booking_id]
-                    self.logger.log(
-                        f"Cancellation: Booking {booking_id} removed from database (original bus {bus_id} was merged but booking not found in active buses)"
-                    )
-                    return True
-                    
-                elif bus.status == "active":
-                    # Normal cancellation for active bus
-                    if seat in bus.seats and bus.seats[seat] == client_id:
-                        bus.release_seat(seat)
-                        del self.bookings_db[booking_id]
-                        self.logger.log(
-                            f"Cancellation: Booking {booking_id} cancelled by client {client_id}"
-                        )
-                        return True
-
-            # If bus not found or other issues, still remove the booking record
-            del self.bookings_db[booking_id]
-            self.logger.log(
-                f"Cancellation: Booking {booking_id} removed from database (bus {bus_id} not found or other issue)"
-            )
+            if self.db:
+                self.db.delete_booking(booking_id)
+                self.db.delete_bus_seat(bus_id, seat, date)
             return True
 
     def get_booking(self, booking_id: str) -> Optional[dict]:
@@ -274,12 +256,27 @@ class BusBookingSystem:
 
     def get_client_bookings(self, client_id: str) -> List[dict]:
         """Get all bookings for a client"""
-        with self.system_lock:
-            return [
-                {"booking_id": bid, **booking}
-                for bid, booking in self.bookings_db.items()
-                if booking["client_id"] == client_id
-            ]
+        return self.db.get_client_bookings(client_id)
+    def _load_from_database(self):
+        """Load existing data from database on startup"""
+        if not self.db:
+            return
+        
+        # Load bookings
+        db_bookings = self.db.get_all_bookings()
+        for booking in db_bookings:
+            self.bookings_db[booking['booking_id']] = {
+                "client_id": booking['client_id'],
+                "bus_id": booking['bus_id'],
+                "seat": booking['seat'],
+                "date": booking['date'],
+                "booking_time": booking['booking_time']
+            }
+        
+        # Update booking counter
+        if self.bookings_db:
+            max_id = max(int(bid[2:]) for bid in self.bookings_db.keys() if bid.startswith('BK'))
+            self.booking_counter = max_id
 
     def get_bus_status(self, bus_id: int) -> dict:
         """Get status of a specific bus"""

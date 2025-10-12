@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Login - BusHub{% endblock %}
+
+{% block content %}
+<div class="min-h-[calc(100vh-200px)] flex items-center justify-center">
+    <div class="max-w-md w-full">
+        <!-- Card -->
+        <div class="bg-white rounded-2xl shadow-2xl p-8 animate-slide-up">
+            <!-- Icon -->
+            <div class="flex justify-center mb-6">
+                <div class="bg-gradient-to-br from-primary to-secondary w-20 h-20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-user text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Welcome Back</h2>
+            <p class="text-center text-gray-600 mb-8">Enter your Client ID to continue</p>
+
+            <!-- Form -->
+            <form method="POST" action="{{ url_for('login') }}" class="space-y-6">
+                <div>
+                    <label for="client_id" class="block text-sm font-medium text-gray-700 mb-2">
+                        <i class="fas fa-id-card mr-1"></i> Client ID
+                    </label>
+                    <input 
+                        type="text" 
+                        id="client_id" 
+                        name="client_id" 
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                        placeholder="Enter your client ID"
+                        autofocus
+                    >
+                    <p class="mt-2 text-sm text-gray-500">
+                        <i class="fas fa-info-circle mr-1"></i> New user? Just enter any unique ID to get started
+                    </p>
+                </div>
+
+                <button 
+                    type="submit" 
+                    class="w-full bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition"
+                >
+                    <i class="fas fa-sign-in-alt mr-2"></i> Continue to Dashboard
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-4 bg-white text-gray-500">Or</span>
+                </div>
+            </div>
+
+            <!-- Admin Link -->
+            <div class="text-center">
+                <a href="{{ url_for('admin_login') }}" class="text-primary hover:text-secondary transition font-medium">
+                    <i class="fas fa-user-shield mr-1"></i> Admin Portal
+                </a>
+            </div>
+        </div>
+
+        <!-- Info Cards -->
+        <div class="grid grid-cols-3 gap-4 mt-6">
+            <div class="bg-white rounded-lg p-4 text-center shadow-md">
+                <i class="fas fa-bolt text-primary text-2xl mb-2"></i>
+                <p class="text-xs text-gray-600">Instant Booking</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 text-center shadow-md">
+                <i class="fas fa-lock text-secondary text-2xl mb-2"></i>
+                <p class="text-xs text-gray-600">Secure</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 text-center shadow-md">
+                <i class="fas fa-clock text-accent text-2xl mb-2"></i>
+                <p class="text-xs text-gray-600">Real-Time</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Add smooth animation on form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const button = this.querySelector('button[type="submit"]');
+        button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+        button.disabled = true;
+    });
+</script>
+{% endblock %}

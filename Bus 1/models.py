@@ -40,7 +40,10 @@ class Bus:
                     self.seats[seat_number] = client_id
                     self.reservation_time[seat_number] = time.time()
                     self.departure_dates[seat_number] = date
-                    self.booking_confirmed[seat_number] = confirmed  # Mark as confirmed
+                    self.booking_confirmed[seat_number] = confirmed
+                    
+                    # Notify booking system to update database
+                    # You'll need to pass booking_system reference or use callback
                     return True
         return False
 
