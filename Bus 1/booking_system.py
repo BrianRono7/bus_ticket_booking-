@@ -47,7 +47,6 @@ class BusBookingSystem:
         )
         if ENABLE_DATABASE:
             self.db = DatabaseManager()
-            self._load_from_database()
         else:
             self.db = None
         
@@ -58,6 +57,9 @@ class BusBookingSystem:
         for i in range(initial_buses):
             self.buses[i] = Bus(i, total_seats=DEFAULT_SEATS_PER_BUS, route=DEFAULT_ROUTE)
             self.logger.log(f"Initialized bus {i}")
+        
+        if ENABLE_DATABASE:
+            self._load_from_database()
 
     def increment_visitor(self) -> int:
         """Thread-safe visitor counter increment"""
@@ -133,38 +135,88 @@ class BusBookingSystem:
                         )
 
         return released_seats
+    
+    def get_current_time(self) -> str:
+        """Return precise timestamp with microseconds"""
+        now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S.%f")
+        time.sleep(0.001)  # small delay to avoid same-timestamp collision
+        return now
 
     def book_seat_for_client(self, client_id: str, travel_date: str,
-                            preferred_bus: Optional[int] = None,
-                            preferred_seat: Optional[int] = None) -> dict:
-        """Book a seat for a client"""
+                         preferred_bus: int, preferred_seat: int) -> dict:
+        """Atomically book a seat for a client (bus and seat required)"""
         self.increment_visitor()
         self.release_expired_reservations()
         self.add_buses_if_needed()
 
-        with self.system_lock:
-            # Try preferred bus/seat first
-            if preferred_bus is not None and preferred_bus in self.buses:
-                result = self._try_book_on_bus(
-                    self.buses[preferred_bus], 
-                    client_id, 
-                    travel_date, 
-                    preferred_seat
-                )
-                if result:
-                    return result
+        if preferred_bus is None or preferred_seat is None:
+            raise ValueError("Both preferred_bus and preferred_seat are required.")
 
-            # Try any available bus
-            for bus_id, bus in self.buses.items():
-                if bus.status != "active":
-                    continue
+        # Verify bus exists
+        if preferred_bus not in self.buses:
+            return {"status": "failure", "message": "Selected bus does not exist."}
 
-                result = self._try_book_on_bus(bus, client_id, travel_date)
-                if result:
-                    return result
+        bus = self.buses[preferred_bus]
+        if bus.status != "active":
+            return {"status": "failure", "message": "Selected bus is not available."}
 
-        self.logger.log(f"Client {client_id} could not find available seat for {travel_date}")
-        return {"status": "failure", "message": "No seats available for selected date"}
+        try:
+            # Perform the booking atomically
+            with self.db.atomic_transaction() as conn:
+                cursor = conn.cursor()
+
+                # Check seat availability or lock
+                cursor.execute('''
+                    SELECT client_id 
+                    FROM bus_seats 
+                    WHERE bus_id = ? AND seat_number = ? AND departure_date = ?
+                ''', (preferred_bus, preferred_seat, travel_date))
+                existing = cursor.fetchone()
+
+                if existing is not None:
+                    return {
+                        "status": "failure",
+                        "message": f"Seat {preferred_seat} on bus {preferred_bus} is already booked or locked."
+                    }
+
+                # Lock the seat before booking (prevent race conditions)
+                cursor.execute('''
+                    INSERT INTO bus_seats (bus_id, seat_number, client_id, departure_date)
+                    VALUES (?, ?, ?, ?)
+                ''', (preferred_bus, preferred_seat, client_id, travel_date))
+
+                # Save booking record
+                booking_id = f"BK-{preferred_bus}-{preferred_seat}-{travel_date}"
+                booking_data = {
+                    "booking_id": booking_id,
+                    "client_id": client_id,
+                    "bus_id": preferred_bus,
+                    "seat": preferred_seat,
+                    "date": travel_date,
+                    "booking_time": self.get_current_time()
+                }
+
+                self.db.save_booking(booking_data, conn=conn)
+            with self.system_lock:
+                bus.seats[preferred_seat] = client_id
+                bus.departure_dates[preferred_seat] = travel_date
+                # Store in bookings_db for consistency
+                self.bookings_db[booking_id] = booking_data
+
+            self.logger.log(f"Client {client_id} successfully booked seat {preferred_seat} on bus {preferred_bus} ({travel_date})")
+            return {"status": "success", 
+            "booking_id": booking_id,
+            "client_id": client_id,
+            "bus_id": preferred_bus,
+            "seat_number": preferred_seat,
+            "date": travel_date,
+            "route": "Nakuru-Nairobi",
+            "message": "Seat booked successfully."}
+
+        except Exception as e:
+            self.logger.log(f"Booking failed for client {client_id}: {e}")
+            return {"status": "failure", "message": f"Booking failed: {str(e)}"}
+
 
     def _try_book_on_bus(self, bus: Bus, client_id: str, travel_date: str,
                         preferred_seat: Optional[int] = None) -> Optional[dict]:
@@ -232,6 +284,7 @@ class BusBookingSystem:
 
     def cancel_booking(self, booking_id: str, client_id: str) -> bool:
         """Cancel a booking"""
+        print(f"Attempting to cancel booking {booking_id} for client {client_id}")
         with self.system_lock:
             if booking_id not in self.bookings_db:
                 return False
@@ -243,6 +296,16 @@ class BusBookingSystem:
             bus_id = booking["bus_id"]
             seat = booking["seat"]
             date = booking["date"]
+
+            # Update the in-memory Bus object
+            if bus_id in self.buses:
+                bus = self.buses[bus_id]
+                bus.seats[seat] = None
+                if seat in bus.departure_dates:
+                    del bus.departure_dates[seat]
+
+            # Remove from in-memory storage
+            del self.bookings_db[booking_id]
 
             if self.db:
                 self.db.delete_booking(booking_id)
@@ -260,23 +323,81 @@ class BusBookingSystem:
     def _load_from_database(self):
         """Load existing data from database on startup"""
         if not self.db:
+            self.logger.log("Database not enabled, skipping load")
             return
         
-        # Load bookings
-        db_bookings = self.db.get_all_bookings()
-        for booking in db_bookings:
-            self.bookings_db[booking['booking_id']] = {
-                "client_id": booking['client_id'],
-                "bus_id": booking['bus_id'],
-                "seat": booking['seat'],
-                "date": booking['date'],
-                "booking_time": booking['booking_time']
-            }
-        
-        # Update booking counter
-        if self.bookings_db:
-            max_id = max(int(bid[2:]) for bid in self.bookings_db.keys() if bid.startswith('BK'))
-            self.booking_counter = max_id
+        try:
+            # Load bookings
+            db_bookings = self.db.get_all_bookings()
+            self.logger.log(f"Loading {len(db_bookings)} bookings from database...")
+            
+            if not db_bookings:
+                self.logger.log("No bookings found in database")
+                return
+            
+            loaded_count = 0
+            for booking in db_bookings:
+                booking_id = booking['booking_id']
+                bus_id = booking['bus_id']
+                seat = booking['seat']
+                date = booking['date']
+                client_id = booking['client_id']
+                
+                # Store in bookings_db
+                self.bookings_db[booking_id] = {
+                    "client_id": client_id,
+                    "bus_id": bus_id,
+                    "seat": seat,
+                    "date": date,
+                    "booking_time": booking['booking_time']
+                }
+                
+                # Update in-memory Bus objects
+                if bus_id in self.buses:
+                    bus = self.buses[bus_id]
+                    bus.seats[seat] = client_id
+                    bus.departure_dates[seat] = date
+                    loaded_count += 1
+                    self.logger.log(f"Loaded booking {booking_id}: Bus {bus_id}, Seat {seat}, Date {date}, Client {client_id}")
+                else:
+                    self.logger.log(f"WARNING: Booking {booking_id} references non-existent bus {bus_id}")
+            
+            self.logger.log(f"Successfully loaded {loaded_count} bookings into bus objects")
+            
+            # Update booking counter to avoid ID conflicts
+            if self.bookings_db:
+                # Extract numeric IDs from booking_id format "BK-{bus_id}-{seat}-{date}"
+                # or "BK{counter:06d}" depending on your format
+                try:
+                    max_counter = 0
+                    for bid in self.bookings_db.keys():
+                        if bid.startswith('BK-'):
+                            # Format: BK-{bus_id}-{seat}-{date}
+                            # We need a different approach for this format
+                            continue
+                        elif bid.startswith('BK') and len(bid) > 2:
+                            # Format: BK{counter:06d}
+                            try:
+                                counter = int(bid[2:])
+                                max_counter = max(max_counter, counter)
+                            except ValueError:
+                                continue
+                    
+                    if max_counter > 0:
+                        self.booking_counter = max_counter
+                        self.logger.log(f"Set booking counter to {max_counter}")
+                except Exception as e:
+                    self.logger.log(f"Could not update booking counter: {e}")
+            
+            # Log final bus states
+            for bus_id, bus in self.buses.items():
+                occupied_seats = sum(1 for seat in bus.seats.values() if seat is not None)
+                self.logger.log(f"Bus {bus_id}: {occupied_seats}/{bus.total_seats} seats occupied")
+                
+        except Exception as e:
+            self.logger.log(f"ERROR loading from database: {e}")
+            import traceback
+            self.logger.log(traceback.format_exc())
 
     def get_bus_status(self, bus_id: int) -> dict:
         """Get status of a specific bus"""

@@ -68,9 +68,29 @@ class DatabaseManager:
         else:
             self._local.conn.commit()
     
-    def save_booking(self, booking_data):
-        """Save a booking to database"""
+    @contextmanager
+    def atomic_transaction(self):
+        """Provide an atomic database transaction context"""
         with self._get_connection() as conn:
+            try:
+                conn.execute("BEGIN IMMEDIATE;")  # locks DB for write safety
+                yield conn
+            except Exception:
+                conn.rollback()
+                raise
+            else:
+                conn.commit()
+
+    
+    def save_booking(self, booking_data, conn=None):
+        """Save a booking to database (optionally inside an active transaction)"""
+        internal = False
+        if conn is None:
+            internal = True
+            conn_ctx = self._get_connection()
+            conn = conn_ctx.__enter__()
+        
+        try:
             cursor = conn.cursor()
             cursor.execute('''
                 INSERT OR REPLACE INTO bookings 
@@ -84,6 +104,13 @@ class DatabaseManager:
                 booking_data['date'],
                 booking_data['booking_time']
             ))
+            if internal:
+                conn_ctx.__exit__(None, None, None)
+        except Exception as e:
+            if internal:
+                conn_ctx.__exit__(type(e), e, e.__traceback__)
+            raise
+
     
     def delete_booking(self, booking_id):
         """Delete a booking from database"""
