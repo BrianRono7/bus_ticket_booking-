@@ -1,0 +1,506 @@
+{% extends "base.html" %}
+
+{% block title %}Simulation Manager - BusHub{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2 flex items-center">
+        <i class="fas fa-flask text-primary mr-3"></i>
+        Simulation Manager
+    </h1>
+    <p class="text-gray-600">Run comprehensive system stress tests and performance analysis</p>
+</div>
+
+<!-- Control Panel -->
+<div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Control Panel</h2>
+        <div class="flex gap-3">
+            <button id="startBtn" onclick="startSimulation()" 
+                    class="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition flex items-center">
+                <i class="fas fa-play mr-2"></i> Start Simulation
+            </button>
+            <button onclick="location.reload()" 
+                    class="bg-gray-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition flex items-center">
+                <i class="fas fa-sync-alt mr-2"></i> Refresh
+            </button>
+        </div>
+    </div>
+
+    <!-- Status Display -->
+    <div id="statusPanel" class="hidden">
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mb-4">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-1">Current Phase</h3>
+                    <p id="currentPhase" class="text-2xl font-bold text-primary">Initializing...</p>
+                </div>
+                <div class="text-right">
+                    <h3 class="text-lg font-bold text-gray-800 mb-1">Elapsed Time</h3>
+                    <p id="elapsedTime" class="text-2xl font-bold text-gray-700">0.0s</p>
+                </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="mb-2">
+                <div class="flex justify-between text-sm text-gray-600 mb-1">
+                    <span>Overall Progress</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
+                    <div id="progressBar" class="bg-gradient-to-r from-primary to-secondary h-6 rounded-full transition-all duration-300 flex items-center justify-center text-white text-sm font-bold" 
+                         style="width: 0%">
+                        <span id="progressText">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase Progress Indicators -->
+        <div class="grid grid-cols-5 gap-3 mb-4">
+            <div id="phase1" class="phase-indicator bg-gray-100 p-3 rounded-lg text-center border-2 border-gray-200">
+                <i class="fas fa-circle text-gray-400 mb-1"></i>
+                <p class="text-xs font-semibold text-gray-600">Phase 1</p>
+                <p class="text-xs text-gray-500">Basic Booking</p>
+            </div>
+            <div id="phase2" class="phase-indicator bg-gray-100 p-3 rounded-lg text-center border-2 border-gray-200">
+                <i class="fas fa-circle text-gray-400 mb-1"></i>
+                <p class="text-xs font-semibold text-gray-600">Phase 2</p>
+                <p class="text-xs text-gray-500">Realistic Patterns</p>
+            </div>
+            <div id="phase3" class="phase-indicator bg-gray-100 p-3 rounded-lg text-center border-2 border-gray-200">
+                <i class="fas fa-circle text-gray-400 mb-1"></i>
+                <p class="text-xs font-semibold text-gray-600">Phase 3</p>
+                <p class="text-xs text-gray-500">Stress Testing</p>
+            </div>
+            <div id="phase4" class="phase-indicator bg-gray-100 p-3 rounded-lg text-center border-2 border-gray-200">
+                <i class="fas fa-circle text-gray-400 mb-1"></i>
+                <p class="text-xs font-semibold text-gray-600">Phase 4</p>
+                <p class="text-xs text-gray-500">Admin Ops</p>
+            </div>
+            <div id="phase5" class="phase-indicator bg-gray-100 p-3 rounded-lg text-center border-2 border-gray-200">
+                <i class="fas fa-circle text-gray-400 mb-1"></i>
+                <p class="text-xs font-semibold text-gray-600">Phase 5</p>
+                <p class="text-xs text-gray-500">Performance</p>
+            </div>
+        </div>
+
+        <!-- Live Metrics -->
+        <div class="grid grid-cols-4 gap-4">
+            <div class="bg-blue-50 p-4 rounded-lg text-center border-2 border-blue-200">
+                <i class="fas fa-ticket-alt text-blue-500 text-2xl mb-2"></i>
+                <p class="text-sm text-gray-600 mb-1">Bookings</p>
+                <p id="metricBookings" class="text-2xl font-bold text-gray-800">-</p>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg text-center border-2 border-green-200">
+                <i class="fas fa-users text-green-500 text-2xl mb-2"></i>
+                <p class="text-sm text-gray-600 mb-1">Visitors</p>
+                <p id="metricVisitors" class="text-2xl font-bold text-gray-800">-</p>
+            </div>
+            <div class="bg-purple-50 p-4 rounded-lg text-center border-2 border-purple-200">
+                <i class="fas fa-bus text-purple-500 text-2xl mb-2"></i>
+                <p class="text-sm text-gray-600 mb-1">Active Buses</p>
+                <p id="metricBuses" class="text-2xl font-bold text-gray-800">-</p>
+            </div>
+            <div class="bg-pink-50 p-4 rounded-lg text-center border-2 border-pink-200">
+                <i class="fas fa-chart-line text-pink-500 text-2xl mb-2"></i>
+                <p class="text-sm text-gray-600 mb-1">Load Factor</p>
+                <p id="metricLoad" class="text-2xl font-bold text-gray-800">-</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Live Logs -->
+<div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+            <i class="fas fa-terminal text-primary mr-2"></i>
+            Live Console
+        </h2>
+        <div class="flex gap-2">
+            <button onclick="toggleAutoScroll()" id="autoScrollBtn" class="text-sm text-blue-600 hover:text-blue-800 px-3 py-1 rounded border border-blue-300">
+                <i class="fas fa-arrow-down mr-1"></i> Auto-scroll: ON
+            </button>
+            <button onclick="clearLogs()" class="text-sm text-gray-600 hover:text-gray-800 px-3 py-1 rounded border border-gray-300">
+                <i class="fas fa-trash mr-1"></i> Clear
+            </button>
+        </div>
+    </div>
+    
+    <div id="logContainer" class="bg-gray-900 rounded-lg p-4 h-96 overflow-y-auto font-mono text-sm">
+        <div class="text-green-400"><i class="fas fa-check-circle mr-2"></i>System ready. Click "Start Simulation" to begin...</div>
+    </div>
+</div>
+
+<!-- Simulation Results -->
+<div id="resultsPanel" class="hidden bg-white rounded-xl shadow-lg p-6">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+        <i class="fas fa-chart-bar text-primary mr-2"></i>
+        Simulation Results
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Summary Stats -->
+        <div class="border-2 border-gray-200 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Summary Statistics</h3>
+            <div class="space-y-3">
+                <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                    <span class="text-gray-600"><i class="fas fa-clock mr-2"></i>Total Duration:</span>
+                    <span id="resultDuration" class="font-bold">-</span>
+                </div>
+                <div class="flex justify-between items-center p-2 bg-blue-50 rounded">
+                    <span class="text-gray-600"><i class="fas fa-ticket-alt mr-2"></i>Total Bookings:</span>
+                    <span id="resultBookings" class="font-bold text-blue-600">-</span>
+                </div>
+                <div class="flex justify-between items-center p-2 bg-green-50 rounded">
+                    <span class="text-gray-600"><i class="fas fa-users mr-2"></i>Total Visitors:</span>
+                    <span id="resultVisitors" class="font-bold text-green-600">-</span>
+                </div>
+                <div class="flex justify-between items-center p-2 bg-purple-50 rounded">
+                    <span class="text-gray-600"><i class="fas fa-bus mr-2"></i>Active Buses:</span>
+                    <span id="resultBuses" class="font-bold text-purple-600">-</span>
+                </div>
+                <div class="flex justify-between items-center p-2 bg-pink-50 rounded">
+                    <span class="text-gray-600"><i class="fas fa-chart-line mr-2"></i>Final Load Factor:</span>
+                    <span id="resultLoad" class="font-bold text-pink-600">-</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase Completion Status -->
+        <div class="border-2 border-gray-200 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Phase Completion</h3>
+            <div class="space-y-3">
+                <div class="flex items-center p-2 bg-green-50 rounded">
+                    <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                    <div>
+                        <p class="font-bold text-gray-800">Phase 1: Basic Booking</p>
+                        <p class="text-xs text-gray-600">Iterative, Threading, ThreadPool</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-2 bg-green-50 rounded">
+                    <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                    <div>
+                        <p class="font-bold text-gray-800">Phase 2: Realistic Patterns</p>
+                        <p class="text-xs text-gray-600">Multi-day bookings & cancellations</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-2 bg-green-50 rounded">
+                    <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                    <div>
+                        <p class="font-bold text-gray-800">Phase 3: Stress Testing</p>
+                        <p class="text-xs text-gray-600">Auto-scaling & burst loads</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-2 bg-green-50 rounded">
+                    <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                    <div>
+                        <p class="font-bold text-gray-800">Phase 4: Admin Operations</p>
+                        <p class="text-xs text-gray-600">Bus merging & system overview</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-2 bg-green-50 rounded">
+                    <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                    <div>
+                        <p class="font-bold text-gray-800">Phase 5: Performance Analysis</p>
+                        <p class="text-xs text-gray-600">CPU, Memory, I/O metrics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-6 text-center">
+        <a href="{{ url_for('admin_dashboard') }}" 
+           class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition">
+            <i class="fas fa-arrow-left mr-2"></i> Back to Dashboard
+        </a>
+    </div>
+</div>
+
+<script>
+let statusInterval = null;
+let startTime = null;
+let autoScroll = true;
+let lastLogCount = 0;
+
+function startSimulation() {
+    const btn = document.getElementById('startBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Starting...';
+    
+    // Show status panel
+    document.getElementById('statusPanel').classList.remove('hidden');
+    document.getElementById('resultsPanel').classList.add('hidden');
+    
+    // Reset phase indicators
+    for (let i = 1; i <= 5; i++) {
+        const phase = document.getElementById(`phase${i}`);
+        phase.className = 'phase-indicator bg-gray-100 p-3 rounded-lg text-center border-2 border-gray-200';
+        phase.querySelector('i').className = 'fas fa-circle text-gray-400 mb-1';
+    }
+    
+    // Clear logs
+    const logContainer = document.getElementById('logContainer');
+    logContainer.innerHTML = '<div class="text-green-400"><i class="fas fa-rocket mr-2"></i>Launching simulation...</div>';
+    lastLogCount = 0;
+    
+    fetch('/admin/run-simulation', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            addLog('success', 'Simulation started successfully');
+            startTime = Date.now();
+            startPolling();
+        } else {
+            addLog('error', 'Failed to start: ' + data.message);
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Simulation';
+        }
+    })
+    .catch(error => {
+        addLog('error', 'Error: ' + error);
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Simulation';
+    });
+}
+
+function startPolling() {
+    statusInterval = setInterval(updateStatus, 500);
+}
+
+function updateStatus() {
+    fetch('/admin/simulation-status')
+    .then(response => response.json())
+    .then(data => {
+        // Update phase
+        document.getElementById('currentPhase').textContent = data.phase;
+        
+        // Update progress
+        const progress = Math.min(100, Math.max(0, data.progress));
+        document.getElementById('progressBar').style.width = progress + '%';
+        document.getElementById('progressPercent').textContent = progress + '%';
+        document.getElementById('progressText').textContent = progress + '%';
+        
+        // Update elapsed time
+        if (data.start_time) {
+            const elapsed = (Date.now() / 1000) - data.start_time;
+            document.getElementById('elapsedTime').textContent = elapsed.toFixed(1) + 's';
+        }
+        
+        // Update phase indicators
+        updatePhaseIndicators(data.phase, progress);
+        
+        // Update metrics if available
+        if (data.results && Object.keys(data.results).length > 0) {
+            document.getElementById('metricBookings').textContent = data.results.total_bookings || '-';
+            document.getElementById('metricVisitors').textContent = data.results.total_visitors || '-';
+            document.getElementById('metricBuses').textContent = data.results.active_buses || '-';
+            document.getElementById('metricLoad').textContent = 
+                data.results.load_factor ? (data.results.load_factor * 100).toFixed(1) + '%' : '-';
+        }
+        
+        // Process new logs
+        if (data.logs && data.logs.length > lastLogCount) {
+            for (let i = lastLogCount; i < data.logs.length; i++) {
+                const log = data.logs[i];
+                const time = log.time.toFixed(2);
+                const icon = getPhaseIcon(log.phase);
+                addLog('info', `${icon} [${time}s] ${log.phase}: ${log.message}`, false);
+            }
+            lastLogCount = data.logs.length;
+        }
+        
+        // Check if completed
+        if (!data.running && data.progress === 100) {
+            clearInterval(statusInterval);
+            showResults(data);
+        }
+        
+        // Check for errors
+        if (!data.running && data.phase === 'Error') {
+            clearInterval(statusInterval);
+            addLog('error', '❌ Simulation failed. Check console for details.');
+            const btn = document.getElementById('startBtn');
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Simulation';
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching status:', error);
+    });
+}
+
+function updatePhaseIndicators(phase, progress) {
+    const phases = [
+        { id: 'phase1', name: 'Phase 1', range: [0, 25] },
+        { id: 'phase2', name: 'Phase 2', range: [25, 50] },
+        { id: 'phase3', name: 'Phase 3', range: [50, 75] },
+        { id: 'phase4', name: 'Phase 4', range: [75, 88] },
+        { id: 'phase5', name: 'Phase 5', range: [88, 100] }
+    ];
+    
+    phases.forEach(p => {
+        const element = document.getElementById(p.id);
+        const icon = element.querySelector('i');
+        
+        if (progress > p.range[1]) {
+            // Completed
+            element.className = 'phase-indicator bg-green-50 p-3 rounded-lg text-center border-2 border-green-500';
+            icon.className = 'fas fa-check-circle text-green-500 mb-1';
+        } else if (progress >= p.range[0] && progress <= p.range[1]) {
+            // In progress
+            element.className = 'phase-indicator bg-blue-50 p-3 rounded-lg text-center border-2 border-blue-500 animate-pulse';
+            icon.className = 'fas fa-spinner fa-spin text-blue-500 mb-1';
+        } else {
+            // Pending
+            element.className = 'phase-indicator bg-gray-100 p-3 rounded-lg text-center border-2 border-gray-200';
+            icon.className = 'fas fa-circle text-gray-400 mb-1';
+        }
+    });
+}
+
+function getPhaseIcon(phase) {
+    if (phase.includes('Phase 1')) return '🔄';
+    if (phase.includes('Phase 2')) return '📅';
+    if (phase.includes('Phase 3')) return '⚡';
+    if (phase.includes('Phase 4')) return '👨‍💼';
+    if (phase.includes('Phase 5')) return '📊';
+    if (phase.includes('Initialization')) return '🚀';
+    if (phase.includes('Completed')) return '✅';
+    if (phase.includes('Error')) return '❌';
+    return '•';
+}
+
+function showResults(data) {
+    // Update button
+    const btn = document.getElementById('startBtn');
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-play mr-2"></i> Start Simulation';
+    
+    // Show results panel
+    document.getElementById('resultsPanel').classList.remove('hidden');
+    
+    // Calculate duration
+    const duration = data.end_time - data.start_time;
+    document.getElementById('resultDuration').textContent = duration.toFixed(2) + 's';
+    
+    // Update result metrics
+    if (data.results) {
+        document.getElementById('resultBookings').textContent = data.results.total_bookings || 0;
+        document.getElementById('resultVisitors').textContent = data.results.total_visitors || 0;
+        document.getElementById('resultBuses').textContent = data.results.active_buses || 0;
+        document.getElementById('resultLoad').textContent = 
+            data.results.load_factor ? (data.results.load_factor * 100).toFixed(2) + '%' : '0%';
+    }
+    
+    addLog('success', '🎉 Simulation completed successfully!');
+}
+
+function addLog(type, message, includeTimestamp = true) {
+    const logContainer = document.getElementById('logContainer');
+    
+    const colors = {
+        'info': 'text-blue-400',
+        'success': 'text-green-400',
+        'error': 'text-red-400',
+        'warning': 'text-yellow-400'
+    };
+    
+    const color = colors[type] || 'text-gray-400';
+    const logEntry = document.createElement('div');
+    logEntry.className = `log-entry ${color} mb-1`;
+    
+    if (includeTimestamp) {
+        const timestamp = new Date().toLocaleTimeString();
+        logEntry.textContent = `[${timestamp}] ${message}`;
+    } else {
+        logEntry.textContent = message;
+    }
+    
+    logContainer.appendChild(logEntry);
+    
+    if (autoScroll) {
+        logContainer.scrollTop = logContainer.scrollHeight;
+    }
+}
+
+function clearLogs() {
+    document.getElementById('logContainer').innerHTML = 
+        '<div class="text-gray-500">Logs cleared.</div>';
+    lastLogCount = 0;
+}
+
+function toggleAutoScroll() {
+    autoScroll = !autoScroll;
+    const btn = document.getElementById('autoScrollBtn');
+    if (autoScroll) {
+        btn.innerHTML = '<i class="fas fa-arrow-down mr-1"></i> Auto-scroll: ON';
+        btn.className = 'text-sm text-blue-600 hover:text-blue-800 px-3 py-1 rounded border border-blue-300';
+    } else {
+        btn.innerHTML = '<i class="fas fa-arrow-down mr-1"></i> Auto-scroll: OFF';
+        btn.className = 'text-sm text-gray-600 hover:text-gray-800 px-3 py-1 rounded border border-gray-300';
+    }
+}
+</script>
+
+<style>
+.log-entry {
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: 2px 0;
+}
+
+#logContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+#logContainer::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+#logContainer::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+}
+
+#logContainer::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.7; 
+        transform: scale(1.02);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.phase-indicator {
+    transition: all 0.3s ease;
+}
+
+.phase-indicator:hover {
+    transform: translateY(-2px);
+    shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#progressBar {
+    transition: width 0.3s ease;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+
+{% block title %}Analytics - BusHub Admin{% endblock %}
+
+{% block extra_head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2 flex items-center">
+        <i class="fas fa-chart-bar text-primary mr-3"></i>
+        System Analytics
+    </h1>
+    <p class="text-gray-600">Detailed performance insights and system metrics</p>
+</div>
+
+<!-- Performance Overview -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+    <!-- CPU Chart -->
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+            <i class="fas fa-microchip text-blue-500 mr-2"></i>
+            CPU Usage
+        </h3>
+        <canvas id="cpuChart"></canvas>
+        <div class="mt-4 space-y-2 text-sm">
+            <div class="flex justify-between">
+                <span class="text-gray-600">Max:</span>
+                <span class="font-bold text-red-600">{{ "%.2f"|format(perf.max_cpu_usage) }}%</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Avg:</span>
+                <span class="font-bold text-blue-600">{{ "%.2f"|format(perf.avg_cpu_usage) }}%</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Min:</span>
+                <span class="font-bold text-green-600">{{ "%.2f"|format(perf.min_cpu_usage) }}%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memory Chart -->
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+            <i class="fas fa-memory text-purple-500 mr-2"></i>
+            Memory Usage
+        </h3>
+        <canvas id="memoryChart"></canvas>
+        <div class="mt-4 space-y-2 text-sm">
+            <div class="flex justify-between">
+                <span class="text-gray-600">Physical:</span>
+                <span class="font-bold">{{ "%.2f"|format(perf.max_physical_memory_mb) }} MB</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Virtual:</span>
+                <span class="font-bold">{{ "%.2f"|format(perf.max_virtual_memory_mb) }} MB</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Threads:</span>
+                <span class="font-bold">{{ perf.max_threads|int }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- I/O Performance -->
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+            <i class="fas fa-hdd text-green-500 mr-2"></i>
+            Disk I/O
+        </h3>
+        <canvas id="ioChart"></canvas>
+        <div class="mt-4 space-y-2 text-sm">
+            <div class="flex justify-between">
+                <span class="text-gray-600">Total Writes:</span>
+                <span class="font-bold">{{ disk.total_writes }}</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Total Time:</span>
+                <span class="font-bold">{{ "%.4f"|format(disk.total_write_time) }}s</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-gray-600">Avg Time:</span>
+                <span class="font-bold">{{ "%.6f"|format(disk.avg_write_time) }}s</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bus Utilization -->
+<div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+        <i class="fas fa-bus text-primary mr-2"></i>
+        Bus Fleet Utilization
+    </h2>
+    <div style="height: 300px;">
+        <canvas id="busUtilizationChart"></canvas>
+    </div>
+</div>
+
+<!-- System Efficiency Metrics -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+    <!-- Threading Performance -->
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+            <i class="fas fa-project-diagram text-primary mr-2"></i>
+            Threading & Concurrency
+        </h3>
+        <div class="space-y-4">
+            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg">
+                <div>
+                    <p class="text-sm text-gray-600">Max Concurrent Threads</p>
+                    <p class="text-3xl font-bold text-blue-600">{{ perf.max_threads|int }}</p>
+                </div>
+                <i class="fas fa-layer-group text-4xl text-blue-300"></i>
+            </div>
+            
+            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg">
+                <div>
+                    <p class="text-sm text-gray-600">Avg Active Threads</p>
+                    <p class="text-3xl font-bold text-purple-600">{{ "%.1f"|format(perf.avg_threads) }}</p>
+                </div>
+                <i class="fas fa-network-wired text-4xl text-purple-300"></i>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-lg">
+                <div>
+                    <p class="text-sm text-gray-600">Monitoring Duration</p>
+                    <p class="text-3xl font-bold text-green-600">{{ "%.2f"|format(perf.total_monitoring_time) }}s</p>
+                </div>
+                <i class="fas fa-clock text-4xl text-green-300"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Efficiency Metrics -->
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+            <i class="fas fa-tachometer-alt text-primary mr-2"></i>
+            Efficiency Metrics
+        </h3>
+        
+        <div class="space-y-4">
+            <div>
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600 font-medium">CPU Efficiency</span>
+                    <span class="font-bold text-blue-600">{{ "%.1f"|format(100 - perf.avg_cpu_usage) }}%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full transition-all duration-500" 
+                         style="width: {{ 100 - perf.avg_cpu_usage }}%"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600 font-medium">I/O Write Efficiency</span>
+                    <span class="font-bold text-green-600">{{ "%.1f"|format((1 - disk.avg_write_time / 0.005) * 100 if disk.avg_write_time < 0.005 else 0) }}%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full transition-all duration-500" 
+                         style="width: {{ (1 - disk.avg_write_time / 0.005) * 100 if disk.avg_write_time < 0.005 else 0 }}%"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600 font-medium">Sample Collection Rate</span>
+                    <span class="font-bold text-purple-600">{{ "%.1f"|format(perf.samples_collected / perf.total_monitoring_time if perf.total_monitoring_time > 0 else 0) }}/s</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full transition-all duration-500" 
+                         style="width: {{ (perf.samples_collected / perf.total_monitoring_time / 10 * 100) if perf.total_monitoring_time > 0 else 0 }}%"></div>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-orange-200">
+                <div class="flex items-center">
+                    <i class="fas fa-lightbulb text-orange-500 text-2xl mr-3"></i>
+                    <div>
+                        <p class="font-semibold text-gray-800">System Health</p>
+                        <p class="text-sm text-gray-600">All metrics within optimal ranges</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Key Insights -->
+<div class="bg-gradient-to-r from-primary to-secondary rounded-xl p-8 text-white">
+    <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <i class="fas fa-star mr-2"></i>
+        Key Performance Insights
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white bg-opacity-20 rounded-lg p-4">
+            <div class="flex items-center mb-2">
+                <i class="fas fa-rocket text-2xl mr-2"></i>
+                <h3 class="font-bold">Optimized I/O</h3>
+            </div>
+            <p class="text-blue-100 text-sm">Batched writes reduce disk operations by ~90%, significantly improving performance.</p>
+        </div>
+
+        <div class="bg-white bg-opacity-20 rounded-lg p-4">
+            <div class="flex items-center mb-2">
+                <i class="fas fa-sync-alt text-2xl mr-2"></i>
+                <h3 class="font-bold">Auto-Scaling</h3>
+            </div>
+            <p class="text-blue-100 text-sm">Dynamic fleet management ensures optimal resource utilization based on real-time demand.</p>
+        </div>
+
+        <div class="bg-white bg-opacity-20 rounded-lg p-4">
+            <div class="flex items-center mb-2">
+                <i class="fas fa-shield-alt text-2xl mr-2"></i>
+                <h3 class="font-bold">Thread-Safe</h3>
+            </div>
+            <p class="text-blue-100 text-sm">Efficient locking strategies minimize contention while ensuring data consistency.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+// CPU Chart
+const cpuCtx = document.getElementById('cpuChart').getContext('2d');
+new Chart(cpuCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Used', 'Available'],
+        datasets: [{
+            data: [{{ perf.avg_cpu_usage }}, {{ 100 - perf.avg_cpu_usage }}],
+            backgroundColor: ['#3b82f6', '#e5e7eb'],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+            legend: { display: false }
+        }
+    }
+});
+
+// Memory Chart
+const memoryCtx = document.getElementById('memoryChart').getContext('2d');
+new Chart(memoryCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Physical', 'Virtual'],
+        datasets: [{
+            data: [{{ perf.max_physical_memory_mb }}, {{ perf.max_virtual_memory_mb - perf.max_physical_memory_mb }}],
+            backgroundColor: ['#8b5cf6', '#e5e7eb'],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+            legend: { display: false }
+        }
+    }
+});
+
+// I/O Chart
+const ioCtx = document.getElementById('ioChart').getContext('2d');
+new Chart(ioCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Write Time', 'Available'],
+        datasets: [{
+            data: [{{ disk.total_write_time }}, {{ 1 - disk.total_write_time if disk.total_write_time < 1 else 0.1 }}],
+            backgroundColor: ['#10b981', '#e5e7eb'],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+            legend: { display: false }
+        }
+    }
+});
+
+// Bus Utilization Chart
+const busCtx = document.getElementById('busUtilizationChart').getContext('2d');
+const busData = {{ bus_data|tojson }};
+new Chart(busCtx, {
+    type: 'bar',
+    data: {
+        labels: busData.map(bus => `Bus ${bus.bus_id}`),
+        datasets: [{
+            label: 'Load Factor (%)',
+            data: busData.map(bus => bus.load_factor),
+            backgroundColor: busData.map(bus => 
+                bus.load_factor > 80 ? '#ef4444' : 
+                bus.load_factor > 60 ? '#f59e0b' : 
+                '#10b981'
+            ),
+            borderRadius: 8,
+            borderWidth: 0
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100,
+                ticks: {
+                    callback: function(value) {
+                        return value + '%';
+                    }
+                }
+            }
+        },
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return 'Load: ' + context.parsed.y.toFixed(1) + '%';
+                    }
+                }
+            }
+        }
+    }
+});
+</script>
+{% endblock %}

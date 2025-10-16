@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - BusHub{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2 flex items-center">
+        <i class="fas fa-user-shield text-primary mr-3"></i>
+        Admin Dashboard
+    </h1>
+    <p class="text-gray-600">System overview and management controls</p>
+</div>
+
+<!-- Key Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+    <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white shadow-lg card-hover">
+        <div class="flex items-center justify-between mb-2">
+            <i class="fas fa-ticket-alt text-3xl opacity-80"></i>
+            <span class="text-4xl font-bold">{{ overview.total_bookings }}</span>
+        </div>
+        <p class="text-blue-100">Total Bookings</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white shadow-lg card-hover">
+        <div class="flex items-center justify-between mb-2">
+            <i class="fas fa-users text-3xl opacity-80"></i>
+            <span class="text-4xl font-bold">{{ overview.total_visitors }}</span>
+        </div>
+        <p class="text-green-100">Total Visitors</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white shadow-lg card-hover">
+        <div class="flex items-center justify-between mb-2">
+            <i class="fas fa-bus text-3xl opacity-80"></i>
+            <span class="text-4xl font-bold">{{ overview.active_buses }}</span>
+        </div>
+        <p class="text-purple-100">Active Buses</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl p-6 text-white shadow-lg card-hover">
+        <div class="flex items-center justify-between mb-2">
+            <i class="fas fa-chart-line text-3xl opacity-80"></i>
+            <span class="text-4xl font-bold">{{ "%.0f"|format(overview.load_factor * 100) }}%</span>
+        </div>
+        <p class="text-pink-100">System Load</p>
+    </div>
+</div>
+
+<!-- System Overview -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+    <!-- Fleet Status -->
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <i class="fas fa-bus text-primary mr-2"></i>
+            Fleet Status
+        </h2>
+        
+        <div class="space-y-4">
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <div>
+                    <p class="text-sm text-gray-600">Total Buses</p>
+                    <p class="text-2xl font-bold text-gray-800">{{ overview.total_buses }}</p>
+                </div>
+                <div class="bg-blue-100 p-3 rounded-full">
+                    <i class="fas fa-bus text-blue-600 text-xl"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <div>
+                    <p class="text-sm text-gray-600">Active Buses</p>
+                    <p class="text-2xl font-bold text-green-600">{{ overview.active_buses }}</p>
+                </div>
+                <div class="bg-green-100 p-3 rounded-full">
+                    <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <div>
+                    <p class="text-sm text-gray-600">Merged Buses</p>
+                    <p class="text-2xl font-bold text-orange-600">{{ overview.merged_buses }}</p>
+                </div>
+                <div class="bg-orange-100 p-3 rounded-full">
+                    <i class="fas fa-compress-arrows-alt text-orange-600 text-xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="mergeBuses()" class="w-full mt-6 bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition">
+            <i class="fas fa-compress-arrows-alt mr-2"></i> Merge Underutilized Buses
+        </button>
+    </div>
+
+    <!-- Seat Utilization -->
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <i class="fas fa-chair text-primary mr-2"></i>
+            Seat Utilization
+        </h2>
+        
+        <div class="mb-6">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-gray-600">Overall Utilization</span>
+                <span class="text-2xl font-bold text-primary">{{ "%.1f"|format(safe_width) }}%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+                <div class="bg-gradient-to-r from-primary to-secondary h-4 rounded-full transition-all duration-500" 
+                    style="width: {{ safe_width }}%">
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                <p class="text-sm text-gray-600 mb-1">Total Seats</p>
+                <p class="text-3xl font-bold text-gray-800">{{ overview.total_seats }}</p>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg text-center">
+                <p class="text-sm text-gray-600 mb-1">Booked</p>
+                <p class="text-3xl font-bold text-green-600">{{ overview.booked_seats }}</p>
+            </div>
+            <div class="bg-purple-50 p-4 rounded-lg text-center">
+                <p class="text-sm text-gray-600 mb-1">Available</p>
+                <p class="text-3xl font-bold text-purple-600">{{ overview.total_seats - overview.booked_seats }}</p>
+            </div>
+            <div class="bg-pink-50 p-4 rounded-lg text-center">
+                <p class="text-sm text-gray-600 mb-1">Load Factor</p>
+                <p class="text-3xl font-bold text-pink-600">{{ "%.0f"|format(overview.load_factor * 100) }}%</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Performance Metrics -->
+<div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+        <i class="fas fa-tachometer-alt text-primary mr-2"></i>
+        Performance Metrics
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- CPU Usage -->
+        <div class="border-2 border-gray-200 rounded-lg p-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-semibold text-gray-700">CPU Usage</h3>
+                <i class="fas fa-microchip text-blue-500 text-xl"></i>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Max:</span>
+                    <span class="font-bold">{{ "%.2f"|format(perf.max_cpu_usage) }}%</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Avg:</span>
+                    <span class="font-bold">{{ "%.2f"|format(perf.avg_cpu_usage) }}%</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Min:</span>
+                    <span class="font-bold">{{ "%.2f"|format(perf.min_cpu_usage) }}%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Memory Usage -->
+        <div class="border-2 border-gray-200 rounded-lg p-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-semibold text-gray-700">Memory Usage</h3>
+                <i class="fas fa-memory text-purple-500 text-xl"></i>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Physical:</span>
+                    <span class="font-bold">{{ "%.2f"|format(perf.max_physical_memory_mb) }} MB</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Virtual:</span>
+                    <span class="font-bold">{{ "%.2f"|format(perf.max_virtual_memory_mb) }} MB</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Threads:</span>
+                    <span class="font-bold">{{ perf.max_threads|int }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- I/O Performance -->
+        <div class="border-2 border-gray-200 rounded-lg p-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-semibold text-gray-700">Disk I/O</h3>
+                <i class="fas fa-hdd text-green-500 text-xl"></i>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Writes:</span>
+                    <span class="font-bold">{{ disk.total_writes }}</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Total Time:</span>
+                    <span class="font-bold">{{ "%.4f"|format(disk.total_write_time) }}s</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Avg Time:</span>
+                    <span class="font-bold">{{ "%.6f"|format(disk.avg_write_time) }}s</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <a href="{{ url_for('admin_buses') }}" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-xl hover:shadow-xl transition flex items-center justify-between group">
+        <div>
+            <h3 class="text-xl font-bold mb-1">Manage Buses</h3>
+            <p class="text-blue-100 text-sm">View and control fleet</p>
+        </div>
+        <i class="fas fa-arrow-right text-2xl group-hover:translate-x-2 transition"></i>
+    </a>
+
+    <a href="{{ url_for('admin_bookings') }}" class="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 rounded-xl hover:shadow-xl transition flex items-center justify-between group">
+        <div>
+            <h3 class="text-xl font-bold mb-1">View Bookings</h3>
+            <p class="text-purple-100 text-sm">All booking records</p>
+        </div>
+        <i class="fas fa-arrow-right text-2xl group-hover:translate-x-2 transition"></i>
+    </a>
+
+    <a href="{{ url_for('admin_analytics') }}" class="bg-gradient-to-r from-pink-500 to-pink-600 text-white p-6 rounded-xl hover:shadow-xl transition flex items-center justify-between group">
+        <div>
+            <h3 class="text-xl font-bold mb-1">Analytics</h3>
+            <p class="text-pink-100 text-sm">Detailed insights</p>
+        </div>
+        <i class="fas fa-arrow-right text-2xl group-hover:translate-x-2 transition"></i>
+    </a>
+
+    <!-- NEW SIMULATION BUTTON -->
+    <button onclick="runSimulation()" class="bg-gradient-to-r from-orange-500 to-red-600 text-white p-6 rounded-xl hover:shadow-xl transition flex items-center justify-between group">
+        <div class="text-left">
+            <h3 class="text-xl font-bold mb-1">Run Simulation</h3>
+            <p class="text-orange-100 text-sm">Test system stress</p>
+        </div>
+        <i class="fas fa-play text-2xl group-hover:scale-110 transition"></i>
+    </button>
+</div>
+
+<script>
+function mergeBuses() {
+    if (!confirm('Merge underutilized buses? This will combine passengers from low-occupancy buses.')) return;
+    
+    const btn = event.target;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Merging...';
+    btn.disabled = true;
+    
+    fetch('/admin/merge-buses', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            alert(`Successfully merged ${data.merged_buses.length} buses!`);
+            location.reload();
+        } else {
+            alert('Merge operation: ' + data.message);
+            btn.innerHTML = '<i class="fas fa-compress-arrows-alt mr-2"></i> Merge Underutilized Buses';
+            btn.disabled = false;
+        }
+    })
+    .catch(error => {
+        alert('Error: ' + error);
+        btn.innerHTML = '<i class="fas fa-compress-arrows-alt mr-2"></i> Merge Underutilized Buses';
+        btn.disabled = false;
+    });
+}
+function runSimulation() {
+    if (!confirm('Run comprehensive simulation? This will create test bookings and stress test the system. Check console for output.')) return;
+    
+    const btn = event.target.closest('button');
+    const originalContent = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Running...';
+    btn.disabled = true;
+    
+    fetch('/admin/run-simulation', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            alert(data.message);
+            setTimeout(() => location.reload(), 2000);
+        } else {
+            alert('Simulation error: ' + data.message);
+            btn.innerHTML = originalContent;
+            btn.disabled = false;
+        }
+    })
+    .catch(error => {
+        alert('Error: ' + error);
+        btn.innerHTML = originalContent;
+        btn.disabled = false;
+    });
+}
+</script>
+{% endblock %}
