@@ -63,46 +63,60 @@ class AdminOperations:
             merged_count = 0
             
             for source_bus in buses_to_merge:
-                # Transfer all bookings from source bus
-                for seat_num in range(1, source_bus.total_seats + 1):
-                    if source_bus.seats[seat_num] is not None:
-                        client_id = source_bus.seats[seat_num]
-                        date = source_bus.departure_dates.get(seat_num)
-                        
-                        # Find available seat in target bus
+                # Transfer all bookings from source bus (date-aware)
+                for date_str, date_seats in list(source_bus.seats_by_date.items()):
+                    if not isinstance(date_seats, dict):
+                        continue
+
+                    for seat_num, client_id in list(date_seats.items()):
+                        if client_id is None:
+                            continue
+
+                        # Try to preserve the same seat number if possible
+                        transferred = False
                         for target_bus in buses_to_keep:
                             if target_bus.status == "active":
-                                available = target_bus.get_available_seats(date)
-                                if available:
-                                    new_seat = available[0]
-                                    # Transfer booking
-                                    target_bus.book_seat(new_seat, client_id, date)
-                                    
-                                    # Update booking record in database
-                                    for booking_id, booking in self.booking_system.bookings_db.items():
-                                        if (booking['client_id'] == client_id and 
-                                            booking['bus_id'] == source_bus.bus_id and
-                                            booking['seat'] == seat_num and
-                                            booking['date'] == date):
-                                            # Update booking to point to new bus/seat
-                                            booking['bus_id'] = target_bus.bus_id
-                                            booking['seat'] = new_seat
-                                            if self.booking_system.db:
-                                                self.booking_system.db.save_booking(booking)
+                                # Try to book the SAME seat number first
+                                if target_bus.is_seat_available(seat_num, date_str):
+                                    if target_bus.book_seat(seat_num, client_id, date_str):
+                                        # Update booking record
+                                        self._update_booking_after_merge(
+                                            client_id, source_bus.bus_id, seat_num,
+                                            target_bus.bus_id, seat_num, date_str
+                                        )
+                                        transferred = True
+                                        break
+                                # If same seat not available, try any seat
+                                else:
+                                    available = target_bus.get_available_seats(date_str)
+                                    if available:
+                                        new_seat = available[0]
+                                        if target_bus.book_seat(new_seat, client_id, date_str):
+                                            # Update booking record
+                                            self._update_booking_after_merge(
+                                                client_id, source_bus.bus_id, seat_num,
+                                                target_bus.bus_id, new_seat, date_str
+                                            )
+                                            transferred = True
                                             break
-                                    
-                                    # Clear old seat
-                                    source_bus.release_seat(seat_num)
-                                    break
-                
+
+                        if transferred:
+                            # Clear old seat
+                            source_bus.release_seat(seat_num, date_str)
+                        else:
+                            self.booking_system.logger.log(
+                                f"Warning: Could not transfer booking for {client_id} "
+                                f"from Bus {source_bus.bus_id} Seat {seat_num} Date {date_str}"
+                            )
+
                 # Now mark bus as merged (should be empty)
                 source_bus.status = "merged"
-                # CRITICAL: Clear all seat data
-                source_bus.seats = {i: None for i in range(1, source_bus.total_seats + 1)}
-                source_bus.departure_dates.clear()
+                # Clear all seat data
+                source_bus.seats_by_date.clear()
+                source_bus.locks.clear()
                 source_bus.reservation_time.clear()
                 source_bus.booking_confirmed.clear()
-                
+
                 merged_count += 1
             
             return {
@@ -144,46 +158,67 @@ class AdminOperations:
         
         return transferred
                     
-    def _update_booking_after_merge(self, client_id, old_bus_id, old_seat, 
-                                    new_bus_id, new_seat):
+    def _update_booking_after_merge(self, client_id, old_bus_id, old_seat,
+                                new_bus_id, new_seat, date):
         """Update booking records after bus merge"""
         for booking_id, booking in self.booking_system.bookings_db.items():
-            if (booking['client_id'] == client_id and 
-                booking['bus_id'] == old_bus_id and 
-                booking['seat'] == old_seat):
+            if (booking['client_id'] == client_id and
+                booking['bus_id'] == old_bus_id and
+                booking['seat'] == old_seat and
+                booking['date'] == date):
+                
+                # Update the booking data
                 booking['bus_id'] = new_bus_id
                 booking['seat'] = new_seat
+                
+                # Ensure booking_id is in the dict (it should be, but make sure)
+                if 'booking_id' not in booking:
+                    booking['booking_id'] = booking_id
+
+                # Update database
+                if self.booking_system.db:
+                    self.booking_system.db.save_booking(booking)
+                    self.booking_system.db.delete_bus_seat(old_bus_id, old_seat, date)
+                    self.booking_system.db.save_bus_seat(new_bus_id, new_seat, client_id, date)
+
                 self.booking_system.logger.log(
                     f"Updated booking {booking_id}: Bus {old_bus_id} Seat {old_seat} "
-                    f"→ Bus {new_bus_id} Seat {new_seat}"
+                    f"→ Bus {new_bus_id} Seat {new_seat} (Date: {date})"
                 )
                 break
-
     def get_system_overview(self, username: str, password: str) -> Optional[dict]:
         """Get comprehensive system overview (admin only)"""
         if not self.auth.login(username, password):
             return None
 
-        with self.booking_system.system_lock:
-            active_buses = [b for b in self.booking_system.buses.values() if b.status == "active"]
-            merged_buses = [b for b in self.booking_system.buses.values() if b.status == "merged"]
-            
-            total_seats = sum(bus.total_seats for bus in active_buses)
-            booked_seats = sum(
-                sum(1 for client in bus.seats.values() if client is not None)
-                for bus in active_buses
-            )
+        # Get all buses from database
+        all_buses = self.booking_system.get_all_buses()
+        active_buses = [b for b in all_buses if b['status'] == 'active']
+        merged_buses = [b for b in all_buses if b['status'] == 'merged']
 
-            return {
-                "total_buses": len(self.booking_system.buses),
-                "active_buses": len(active_buses),
-                "merged_buses": len(merged_buses),
-                "total_seats": total_seats,
-                "booked_seats": booked_seats,
-                "load_factor": booked_seats / total_seats if total_seats > 0 else 0,
-                "total_visitors": self.booking_system.get_total_visitors(),
-                "total_bookings": len(self.booking_system.bookings_db)
-            }
+        total_seats = sum(bus['total_seats'] for bus in active_buses)
+
+        # Count booked seats across all dates and buses
+        booked_seats = 0
+        for bus in active_buses:
+            bus_dates = self.booking_system.db.get_all_dates_for_bus(bus['bus_id'])
+            for date in bus_dates:
+                bus_seats = self.booking_system.db.get_bus_seats(bus['bus_id'], date)
+                booked_seats += sum(1 for client_id in bus_seats.values() if client_id is not None)
+
+        # Get all bookings
+        all_bookings = self.booking_system.get_all_bookings()
+
+        return {
+            "total_buses": len(all_buses),
+            "active_buses": len(active_buses),
+            "merged_buses": len(merged_buses),
+            "total_seats": total_seats,
+            "booked_seats": booked_seats,
+            "load_factor": booked_seats / total_seats if total_seats > 0 else 0,
+            "total_visitors": len(set(booking['client_id'] for booking in all_bookings)),
+            "total_bookings": len(all_bookings)
+        }
 
     def force_release_seat(self, username: str, password: str, 
                           bus_id: int, seat_number: int) -> bool:
