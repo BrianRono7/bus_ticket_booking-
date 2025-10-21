@@ -112,11 +112,11 @@ class DatabaseManager:
             raise
 
     
-    def delete_booking(self, booking_id):
-        """Delete a booking from database"""
-        with self._get_connection() as conn:
-            cursor = conn.cursor()
-            cursor.execute('DELETE FROM bookings WHERE booking_id = ?', (booking_id,))
+    # def delete_booking(self, booking_id):
+    #     """Delete a booking from database"""
+    #     with self._get_connection() as conn:
+    #         cursor = conn.cursor()
+    #         cursor.execute('DELETE FROM bookings WHERE booking_id = ?', (booking_id,))
     
     def get_all_bookings(self):
         """Get all bookings from database"""
@@ -124,12 +124,63 @@ class DatabaseManager:
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM bookings')
             return [dict(row) for row in cursor.fetchall()]
+    def get_booking_by_id(self, booking_id):
+        """Get a single booking by its booking_id"""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT * FROM bookings WHERE booking_id = ?', (booking_id,))
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
     
     def get_client_bookings(self, client_id):
         """Get all bookings for a client"""
         with self._get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM bookings WHERE client_id = ?', (client_id,))
+            return [dict(row) for row in cursor.fetchall()]
+    
+    def get_bus_by_id(self, bus_id):
+        """Get a specific bus by ID"""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT * FROM buses WHERE bus_id = ?', (bus_id,))
+            result = cursor.fetchone()
+            return dict(result) if result else None
+
+    def update_bus_status(self, bus_id, status):
+        """Update bus status (active/inactive/merged)"""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                UPDATE buses 
+                SET status = ? 
+                WHERE bus_id = ?
+            ''', (status, bus_id))
+
+    def add_bus(self, bus_id, total_seats, route, status='active'):
+        """Add a new bus to the database"""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                INSERT INTO buses (bus_id, total_seats, route, status)
+                VALUES (?, ?, ?, ?)
+            ''', (bus_id, total_seats, route, status))
+
+    # def delete_bus(self, bus_id):
+    #     """Delete a bus from the database"""
+    #     with self._get_connection() as conn:
+    #         cursor = conn.cursor()
+    #         cursor.execute('DELETE FROM buses WHERE bus_id = ?', (bus_id,))
+    
+    def get_all_buses(self):
+        """Get all buses from database"""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                SELECT * FROM buses 
+                ORDER BY bus_id
+            ''')
             return [dict(row) for row in cursor.fetchall()]
     
     def save_bus_seat(self, bus_id, seat_number, client_id, departure_date):
@@ -160,6 +211,32 @@ class DatabaseManager:
                 WHERE bus_id = ? AND departure_date = ?
             ''', (bus_id, departure_date))
             return {row['seat_number']: row['client_id'] for row in cursor.fetchall()}
+
+    def get_all_dates_for_bus(self, bus_id: int) -> list:
+        """Get all unique departure dates for a specific bus"""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                SELECT DISTINCT departure_date 
+                FROM bus_seats 
+                WHERE bus_id = ?
+                ORDER BY departure_date
+            ''', (bus_id,))
+            rows = cursor.fetchall()
+            return [row['departure_date'] for row in rows if row['departure_date']]
+    
+    def get_all_dates(self) -> list:
+        """Get all unique departure dates across all buses"""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                SELECT DISTINCT departure_date 
+                FROM bus_seats 
+                ORDER BY departure_date
+            ''')
+            rows = cursor.fetchall()
+            return [row['departure_date'] for row in rows if row['departure_date']]
+
     
     def close(self):
         """Close database connection"""
