@@ -57,7 +57,30 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
+        .animate-slide-up {
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .seat {
+            transition: all 0.2s ease;
+        }
+
+        .seat:hover {
+            transform: scale(1.05);
+        }
     </style>
+    
     {% block extra_head %}{% endblock %}
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
